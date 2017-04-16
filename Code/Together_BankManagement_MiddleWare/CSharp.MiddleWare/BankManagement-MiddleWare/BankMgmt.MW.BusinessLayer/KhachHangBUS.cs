@@ -21,9 +21,24 @@ namespace BankMgmt.MW.BusinessLayer
             return _khachHangRepo.GetAll().ToList();
         }
 
+        public KhachHang GetKhachHang(int id)
+        {
+            return _khachHangRepo.GetSingle(d => d.MaKhachHang.Equals(id));
+        }
+
+        public KhachHang GetSoDu(int id)
+        {
+            return _khachHangRepo.GetSingle(d => d.MaKhachHang.Equals(id), d => d.SoDuTaiKhoan);
+        }
+
         public void AddKhachHang(params KhachHang[] khachHangs)
         {
             _khachHangRepo.Add(khachHangs);
+        }
+
+        public void UpdateKhachHang(params KhachHang[] khachHang)
+        {
+            _khachHangRepo.Update(khachHang);
         }
     }
 }
