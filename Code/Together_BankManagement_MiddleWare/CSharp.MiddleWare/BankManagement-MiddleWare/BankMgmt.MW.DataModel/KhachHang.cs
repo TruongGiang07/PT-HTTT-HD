@@ -7,31 +7,40 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BankMgmt.MW.DataAccessLayer
+namespace BankMgmt.MW.DataModel
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class NhanVien
+    public partial class KhachHang
     {
-        public NhanVien()
+        public KhachHang()
         {
             this.GiaoDiches = new HashSet<GiaoDich>();
             this.GiaoDichChuyenTiens = new HashSet<GiaoDichChuyenTien>();
+            this.GiaoDichNhanTiens = new HashSet<GiaoDichChuyenTien>();
+            this.SoTietKiems = new HashSet<SoTietKiem>();
         }
     
-        public int MaNhanVien { get; set; }
-        public string TenDangNhap { get; set; }
-        public string MatKhau { get; set; }
+        public int MaKhachHang { get; set; }
         public string HoTen { get; set; }
+        public decimal SoDuTaiKhoan { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public Nullable<bool> GioiTinh { get; set; }
-        public string DiaChi { get; set; }
-        public string SDT { get; set; }
-        public Nullable<int> MaCNLamViec { get; set; }
+        public string DiaChiThuongTru { get; set; }
+        public string DiaChiLienLac { get; set; }
+        public string SoCMND { get; set; }
+        public string DienThoai { get; set; }
+        public string Email { get; set; }
+        public Nullable<bool> TinhTrangHonNhan { get; set; }
+        public Nullable<System.DateTime> NgayLap { get; set; }
+        public Nullable<bool> TinhTrangHoatDong { get; set; }
+        public Nullable<int> MaCNDangky { get; set; }
     
         public virtual ChiNhanh ChiNhanh { get; set; }
         public virtual ICollection<GiaoDich> GiaoDiches { get; set; }
         public virtual ICollection<GiaoDichChuyenTien> GiaoDichChuyenTiens { get; set; }
+        public virtual ICollection<GiaoDichChuyenTien> GiaoDichNhanTiens { get; set; }
+        public virtual ICollection<SoTietKiem> SoTietKiems { get; set; }
     }
 }

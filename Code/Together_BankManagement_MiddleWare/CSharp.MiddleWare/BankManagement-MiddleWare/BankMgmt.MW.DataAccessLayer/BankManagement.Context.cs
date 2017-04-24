@@ -12,6 +12,7 @@ namespace BankMgmt.MW.DataAccessLayer
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using BankMgmt.MW.DataModel;
     
     public partial class BankManagementEntities : DbContext
     {

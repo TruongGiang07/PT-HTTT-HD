@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BankMgmt.MW.DataAccessLayer
+namespace BankMgmt.MW.DataModel
 {
     using System;
     using System.Collections.Generic;

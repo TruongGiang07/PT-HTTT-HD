@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using BankMgmt.MW.DataModel;
+using BankMgmt.MW.DataAccessLayer;
 
 namespace BankMgmt.MW.BusinessLayer
 {
-    class GiaoDichBUS
+    public class GiaoDichBUS
     {
         private readonly IGenericDataRepository<GiaoDich> _giaoDichRepo;
 

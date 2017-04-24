@@ -84,8 +84,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\GiaoDichChuyenTienController.cs" />
+    <Compile Include="Controllers\GiaoDichController.cs" />
     <Compile Include="Controllers\KhachHangController.cs" />
-    <Compile Include="Controllers\RutTienController.cs" />
+    <Compile Include="Controllers\SoTietKiemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -112,6 +114,10 @@
     <ProjectReference Include="..\BankMgmt.MW.DataAccessLayer\BankMgmt.MW.DataAccessLayer.csproj">
       <Project>{2f760bda-8fb0-43b6-ba74-3669659b492a}</Project>
       <Name>BankMgmt.MW.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BankMgmt.MW.DataModel\BankMgmt.MW.DataModel.csproj">
+      <Project>{cbccbbc8-f99a-4a00-a2d4-00ee1b8b0adf}</Project>
+      <Name>BankMgmt.MW.DataModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

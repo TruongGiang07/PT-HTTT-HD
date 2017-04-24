@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using BankMgmt.MW.DataModel;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using BankMgmt.MW.DataAccessLayer;
 
 namespace BankMgmt.MW.API.Controllers
 {
@@ -27,5 +24,4 @@ namespace BankMgmt.MW.API.Controllers
             return Request.CreateResponse(HttpStatusCode.Created, stk);
         }
     }
-}
 }

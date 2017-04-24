@@ -46,10 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BankManagement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BankManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChiNhanh.cs">
+      <DependentUpon>BankManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDich.cs">
+      <DependentUpon>BankManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDichChuyenTien.cs">
+      <DependentUpon>BankManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>BankManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>BankManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoTietKiem.cs">
+      <DependentUpon>BankManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TruSo.cs">
+      <DependentUpon>BankManagement.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BankManagement.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BankManagement.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

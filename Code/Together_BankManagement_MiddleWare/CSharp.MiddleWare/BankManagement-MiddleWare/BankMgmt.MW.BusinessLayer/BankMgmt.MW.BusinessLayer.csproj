@@ -40,13 +40,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GiaoDichBUS.cs" />
+    <Compile Include="GiaoDichChuyenTienBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoTietKiemBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BankMgmt.MW.DataAccessLayer\BankMgmt.MW.DataAccessLayer.csproj">
       <Project>{2f760bda-8fb0-43b6-ba74-3669659b492a}</Project>
       <Name>BankMgmt.MW.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BankMgmt.MW.DataModel\BankMgmt.MW.DataModel.csproj">
+      <Project>{cbccbbc8-f99a-4a00-a2d4-00ee1b8b0adf}</Project>
+      <Name>BankMgmt.MW.DataModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

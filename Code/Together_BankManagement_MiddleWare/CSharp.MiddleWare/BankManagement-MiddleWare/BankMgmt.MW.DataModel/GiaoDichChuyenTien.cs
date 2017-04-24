@@ -7,21 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BankMgmt.MW.DataAccessLayer
+namespace BankMgmt.MW.DataModel
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class GiaoDich
+    public partial class GiaoDichChuyenTien
     {
-        public int MaGiaoDich { get; set; }
-        public Nullable<decimal> SoTienGiaoDich { get; set; }
-        public Nullable<System.DateTime> NgayGiaoDich { get; set; }
-        public Nullable<int> MaKHGiaoDich { get; set; }
+        public int MaGD { get; set; }
+        public Nullable<decimal> SoTienChuyen { get; set; }
+        public Nullable<System.DateTime> NgayChuyen { get; set; }
+        public string NoiDung { get; set; }
+        public Nullable<int> MaKHChuyen { get; set; }
+        public Nullable<int> MaKHNhan { get; set; }
         public Nullable<int> MaGDVien { get; set; }
-        public Nullable<byte> LoaiGD { get; set; }
     
         public virtual KhachHang KhachHang { get; set; }
+        public virtual KhachHang KhachHangNhan { get; set; }
         public virtual NhanVien NhanVien { get; set; }
     }
 }
