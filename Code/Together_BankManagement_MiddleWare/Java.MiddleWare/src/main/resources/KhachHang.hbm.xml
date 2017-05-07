@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class catalog="QL_NGAN_HANG" name="bankmgmt.POJO.KhachHang" table="KhachHang" schema="dbo">
+        <id name="maKhachHang" type="integer">
+            <column name="MaKhachHang"/>
+            <generator class="identity"/>
+        </id>
+        <property name="hoTen" type="string">
+            <column length="70" name="HoTen"/>
+        </property>
+        <property name="soDuTaiKhoan" type="double">
+            <column name="SoDuTaiKhoan"/>
+        </property>
+        <property name="ngaySinh" type="date">
+            <column name="NgaySinh"/>
+        </property>
+        <property name="gioiTinh" type="boolean">
+            <column name="GioiTinh"/>
+        </property>
+
+        <property name="diaChiThuongTru" type="string">
+            <column length="250" name="DiaChiThuongTru"/>
+        </property>
+        <property name="diaChiLienLac" type="string">
+            <column length="250" name="DiaChiLienLac"/>
+        </property>
+        <property name="soCMND" type="string">
+            <column length="20" name="SoCMND"/>
+        </property>
+        <property name="dienThoai" type="string">
+            <column length="20" name="DienThoai"/>
+        </property>
+
+        <property name="email" type="string">
+            <column length="50" name="Email"/>
+        </property>
+        <property name="tinhTrangHonNhan" type="boolean">
+            <column name="TinhTrangHonNhan"/>
+        </property>
+        <property name="ngayLap" type="date">
+            <column name="NgayLap"/>
+        </property>
+        <property name="tinhTrangHoatDong" type="boolean">
+            <column name="TinhTrangHoatDong"/>
+        </property>
+        <property name="maCNDangky" type="integer">
+            <column name="MaCNDangKy"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>
+
