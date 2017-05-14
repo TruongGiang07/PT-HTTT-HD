@@ -33,6 +33,7 @@
 
         <!-- All mapping configurations -->
         <mapping resource="KhachHang.hbm.xml" />
+        <mapping resource="TongKetGiaoDich.hbm.xml" />
 
 
     </session-factory>

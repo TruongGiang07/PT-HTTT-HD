@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class catalog="QL_NGAN_HANG" name="bankmgmt.POJO.TongKetGiaoDich" table="TongKetGiaoDich" schema="dbo">
+        <id name="id" type="integer">
+            <column name="ID"/>
+            <generator class="identity"/>
+        </id>
+        <property name="ngayGiaoDich" type="date">
+            <column name="NgayGiaoDich"/>
+        </property>
+        <property name="maChiNhanh" type="integer">
+            <column name="ChiNhanh"/>
+        </property>
+        <property name="maTruSo" type="integer">
+            <column name="TruSo"/>
+        </property>
+
+        <property name="slGDRutTien" type="integer">
+            <column name="SL_GD_RutTien"/>
+        </property>
+        <property name="soTienGDRutTien" type="double">
+            <column name="SoTien_GD_RutTien"/>
+        </property>
+
+        <property name="slGDGuiTien" type="integer">
+            <column name="SL_GD_GuiTien"/>
+        </property>
+        <property name="soTienGDGuiTien" type="double">
+            <column name="SoTien_GD_GuiTien"/>
+        </property>
+
+        <property name="slGDChuyenTien" type="integer">
+            <column name="SL_GD_ChuyenTien"/>
+        </property>
+        <property name="soTienGDChuyenTien" type="double">
+            <column name="SoTien_GD_ChuyenTien"/>
+        </property>
+    </class>
+</hibernate-mapping>
+
