@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class catalog="QL_NGAN_HANG" name="bankmgmt.POJO.TruSo" table="TruSo" schema="dbo">
+        <id name="maTruSo" type="integer">
+            <column name="MaTruSo"/>
+            <generator class="identity"/>
+        </id>
+        <property name="tenTruSo" type="string">
+            <column name="TenTruSo"/>
+        </property>
+        <property name="diaChi" type="string">
+            <column name="DiaChi"/>
+        </property>
+        <property name="soDT" type="string">
+            <column name="SoDT"/>
+        </property>
+    </class>
+</hibernate-mapping>
+

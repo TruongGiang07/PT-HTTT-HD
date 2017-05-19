@@ -34,6 +34,8 @@
         <!-- All mapping configurations -->
         <mapping resource="KhachHang.hbm.xml" />
         <mapping resource="TongKetGiaoDich.hbm.xml" />
+        <mapping resource="TruSo.hbm.xml" />
+        <mapping resource="ChiNhanh.hbm.xml" />
 
 
     </session-factory>

@@ -1,8 +1,10 @@
 package bankmgmt.API.Controllers;
 
 import bankmgmt.BusinessLayer.TongKetGiaoDichBUS;
-import bankmgmt.POJO.TongKetGiaoDich;
+import bankmgmt.POJO.TKGDFilter;
+import bankmgmt.POJO.TKGDViewModel;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +19,8 @@ import java.util.List;
 @RestController
 public class TongKetGDController {
 
-    @RequestMapping(value = "all", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public List<TongKetGiaoDich> GetAll() {
-        List<TongKetGiaoDich> listTKGD = TongKetGiaoDichBUS.getAll();
-        return listTKGD;
+    @RequestMapping(value = "gettkgd", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<TKGDViewModel> GetTKGDByFilter(@RequestBody TKGDFilter filter) {
+        return TongKetGiaoDichBUS.getByFilter(filter);
     }
 }
