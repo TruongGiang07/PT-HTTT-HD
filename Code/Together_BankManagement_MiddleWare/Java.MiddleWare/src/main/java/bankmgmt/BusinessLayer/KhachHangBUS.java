@@ -13,7 +13,16 @@ public class KhachHangBUS {
         return KhachHangDAL.getAll();
     }
 
-    public static boolean add(KhachHang kh) {
-        return KhachHangDAL.add(kh);
+    public static List<KhachHang> getKHByID (int makh){
+        return  KhachHangDAL.getKHByID(makh);
     }
+
+    public static boolean addKH(KhachHang kh) {
+        return KhachHangDAL.addKH(kh);
+    }
+
+    public static boolean upKH(KhachHang kh) {
+        return KhachHangDAL.upKH(kh);
+    }
+
 }
