@@ -25,4 +25,8 @@ public class KhachHangBUS {
         return KhachHangDAL.upKH(kh);
     }
 
+    public static boolean delKH(KhachHang kh){
+        return KhachHangDAL.delKH(kh);
+    }
+
 }

@@ -85,4 +85,26 @@ public class KhachHangDAL {
         return true;
     }
 
+    public static boolean delKH(KhachHang kh) {
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try {
+
+            transaction = session.beginTransaction();
+            session.delete(kh);
+            transaction.commit();
+
+        } catch (Exception e) {
+
+            System.err.println(e);
+            transaction.rollback();
+            return false;
+
+        } finally {
+            session.close();
+        }
+        return true;
+    }
+
 }

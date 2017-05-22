@@ -30,7 +30,7 @@ public class KhachHangController {
     }
 
     @RequestMapping(value = "addkh", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<KhachHang> Add(@RequestBody KhachHang kh) {
+    public ResponseEntity<KhachHang> AddKH(@RequestBody KhachHang kh) {
         if (kh != null && KhachHangBUS.addKH(kh)) {
             return new ResponseEntity<KhachHang>(kh, HttpStatus.CREATED);
         } else {
@@ -39,8 +39,17 @@ public class KhachHangController {
     }
 
     @RequestMapping(value = "upkh", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<KhachHang> Upd(@RequestBody KhachHang kh) {
+    public ResponseEntity<KhachHang> UpKH(@RequestBody KhachHang kh) {
         if (kh != null && KhachHangBUS.upKH(kh)) {
+            return new ResponseEntity<KhachHang>(kh, HttpStatus.CREATED);
+        } else {
+            return new ResponseEntity<KhachHang>(kh, HttpStatus.NOT_MODIFIED);
+        }
+    }
+
+    @RequestMapping(value = "delkh", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<KhachHang> DelKH(@RequestBody KhachHang kh) {
+        if (kh != null && KhachHangBUS.delKH(kh)) {
             return new ResponseEntity<KhachHang>(kh, HttpStatus.CREATED);
         } else {
             return new ResponseEntity<KhachHang>(kh, HttpStatus.NOT_MODIFIED);
