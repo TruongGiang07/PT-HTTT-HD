@@ -1,7 +1,25 @@
 package bankmgmt.BusinessLayer;
 
+
+import bankmgmt.DataAccessLayer.NhanVienDAL;
+import bankmgmt.POJO.NhanVien;
+
+import java.util.List;
+
 /**
- * Created by TruongGiang on 5/7/2017.
+ * Created by KhoaPham on 24/5/2017.
  */
 public class NhanVienBUS {
+    public static List<NhanVien> getAll() {
+        return NhanVienDAL.getAll();
+    }
+    public static boolean add(NhanVien nv) {
+        return NhanVienDAL.add(nv);
+    }
+    public static boolean up(NhanVien nv) {
+        return NhanVienDAL.up(nv);
+    }
+    public static boolean del(NhanVien nv){
+        return NhanVienDAL.del(nv);
+    }
 }
