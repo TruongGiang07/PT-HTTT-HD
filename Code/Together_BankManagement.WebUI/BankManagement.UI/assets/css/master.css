@@ -1,2 +1,53 @@
-﻿body {
+﻿
+.form-control, .btn {
+    border-radius: 0px !important;
+}
+
+.btn{
+    text-transform: uppercase;
+}
+
+.header{
+    box-sizing: border-box;
+    height: 144px;
+    background-color: #263238;
+    position: relative;
+}
+
+.filter-left{
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+}
+
+.filter-left div{
+    height: 34px;
+    margin-bottom: 10px;
+    line-height: 34px;
+}
+
+.filter-right{
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+}
+
+.filter-right div{
+    margin-bottom: 10px;
+}
+
+.control-inline{
+    display: inline-block;
+}
+.input-daterange{
+    width: auto !important;
+}
+
+.input-daterange input{
+    text-align: left !important;
+    padding-left: 15px;
+}
+
+.search-btn{
+    margin: -2px 0px 0px 6px;
 }

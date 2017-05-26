@@ -13,11 +13,18 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="BodyContainer" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+        <header class="header">
+            abc
+        </header>
+
+        <div>
+            <asp:ContentPlaceHolder ID="BodyContainer" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer>
+            abcdef
+        </footer>
     </form>
 </body>
 </html>

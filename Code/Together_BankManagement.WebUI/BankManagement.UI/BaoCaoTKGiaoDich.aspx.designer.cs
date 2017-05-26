@@ -13,6 +13,24 @@ namespace BankManagement.UI {
     public partial class BaoCaoTKGiaoDich {
         
         /// <summary>
+        /// dtTuNgay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dtTuNgay;
+        
+        /// <summary>
+        /// dtDenNgay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dtDenNgay;
+        
+        /// <summary>
         /// cbxTruSo control.
         /// </summary>
         /// <remarks>
@@ -31,13 +49,13 @@ namespace BankManagement.UI {
         protected global::System.Web.UI.WebControls.DropDownList cbxChiNhanh;
         
         /// <summary>
-        /// cbxLoaiGD control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cbxLoaiGD;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
         /// gvBaoCaoGiaoDich control.

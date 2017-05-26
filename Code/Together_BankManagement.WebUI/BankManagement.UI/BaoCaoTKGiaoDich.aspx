@@ -6,36 +6,34 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContainer" runat="server">
     <div class="row">
-        <div class="col-md-6 text-right">
-            <div>
-                <label>Ngày Giao Dịch</label>
-            </div>
-            <div>
-                <label>Trụ Sở</label>
-            </div>
-            <div>
-                <label>Chi Nhánh</label>
-            </div>
-            <div>
-                <label>Loại Giao Dịch</label>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div id="dtNgayGiaoDich">
-                <div class="input-group input-daterange">
-                    <input type="text" class="form-control" id="dtTuNgay" /><span class="input-group-addon">Đến</span>
-                    <input type="text" class="form-control" id="dtDenNgay" />
+        <div class="col-md-12 text-center">
+            <div class="filter-left">
+                <div>
+                    <label>Ngày Giao Dịch</label>
                 </div>
-                
+                <div>
+                    <label>Trụ Sở</label>
+                </div>
+                <div>
+                    <label>Chi Nhánh</label>
+                </div>
             </div>
-            <div>
-                <asp:DropDownList ID="cbxTruSo" runat="server"></asp:DropDownList>
-            </div>
-            <div>
-                <asp:DropDownList ID="cbxChiNhanh" runat="server"></asp:DropDownList>
-            </div>
-            <div>
-                <asp:DropDownList ID="cbxLoaiGD" runat="server"></asp:DropDownList>
+            <div class="filter-right">
+                <div id="dtNgayGiaoDich">
+                    <div class="input-group input-daterange">
+                        <asp:TextBox ID="dtTuNgay" runat="server" CssClass="form-control" Width="140px" /><span class="input-group-addon">Đến</span>
+                        <asp:TextBox ID="dtDenNgay" runat="server" CssClass="form-control" Width="140px"/>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <asp:DropDownList ID="cbxTruSo" runat="server" CssClass="form-control" Width="316px" DataValueField="maTruSo" DataTextField="tenTruSo"></asp:DropDownList>
+                </div>
+                <div class="dropdown control-inline">
+                    <asp:DropDownList ID="cbxChiNhanh" runat="server" CssClass="form-control" Width="316px" DataValueField="maChiNhanh" DataTextField="tenChiNhanh"></asp:DropDownList>
+                </div>
+                <div class="control-inline">
+                    <asp:Button ID="btnSearch" runat="server" Text="Xem Báo Cáo" CssClass="btn btn-default search-btn" OnClick="btnSearch_Click" />
+                </div>
             </div>
         </div>
     </div>
@@ -46,13 +44,13 @@
             <asp:GridView ID="gvBaoCaoGiaoDich" runat="server" AutoGenerateColumns="false">
                 <Columns>
                     <asp:BoundField DataField="ngayGiaoDich" DataFormatString="{0:dd/MM/yyyy}" HeaderText="Ngày Giao Dịch" />
-                    <asp:BoundField DataField="maChiNhanh" HeaderText="Chi Nhánh" />
-                    <asp:BoundField DataField="maTruSo" HeaderText="Trụ Sở" />
-                    <asp:BoundField DataField="slGDRutTien" HeaderText="Số Lượng Rút Tiền" />
+                    <asp:BoundField DataField="tenTruSo" HeaderText="Trụ Sở" />
+                    <asp:BoundField DataField="tenChiNhanh" HeaderText="Chi Nhánh" />
+                    <asp:BoundField DataField="slGDRutTien" HeaderText="Số Lượng Rút Tiền" ItemStyle-HorizontalAlign="Right" />
                     <asp:BoundField DataField="soTienGDRutTien" DataFormatString="{0:0,00 VND}" HeaderText="Số Tiền Đã Rút" />
-                    <asp:BoundField DataField="slGDGuiTien" HeaderText="Số Lượng Gửi Tiền" />
+                    <asp:BoundField DataField="slGDGuiTien" HeaderText="Số Lượng Gửi Tiền" ItemStyle-HorizontalAlign="Right" />
                     <asp:BoundField DataField="soTienGDGuiTien" DataFormatString="{0:0,00 VND}" HeaderText="Số Tiền Đã Gửi" />
-                    <asp:BoundField DataField="slGDChuyenTien" HeaderText="Số Lượng Chuyển Tiền" />
+                    <asp:BoundField DataField="slGDChuyenTien" HeaderText="Số Lượng Chuyển Tiền" ItemStyle-HorizontalAlign="Right" />
                     <asp:BoundField DataField="soTienGDChuyenTien" DataFormatString="{0:0,00 VND}" HeaderText="Số Tiền Đã Chuyển" />
                 </Columns>
             </asp:GridView>
@@ -62,7 +60,8 @@
     <script type="text/javascript">
         $('#dtNgayGiaoDich .input-daterange').datepicker({
             autoclose: true,
-            endDate: "-1d"
+            endDate: "-1d",
+            dateFormat: "yyyy-MM-dd"
         });
     </script>
 </asp:Content>

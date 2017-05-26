@@ -182,6 +182,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\ConfigsGetter.cs" />
     <Compile Include="BaoCaoTKGiaoDich.aspx.cs">
       <DependentUpon>BaoCaoTKGiaoDich.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,6 +205,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BankManagement.UI.Common\BankManagement.UI.Common.csproj">
+      <Project>{5c9f1291-ebfc-4232-b65b-3c5d81aadaf8}</Project>
+      <Name>BankManagement.UI.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
