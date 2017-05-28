@@ -1,4 +1,9 @@
 ﻿
+.container-custom{
+    background-color: #263238;
+    padding: 0 20px;
+}
+
 .form-control, .btn {
     border-radius: 0px !important;
 }
@@ -7,11 +12,16 @@
     text-transform: uppercase;
 }
 
-.header{
-    box-sizing: border-box;
-    height: 144px;
-    background-color: #263238;
+.header{    
+    height: 125px;    
     position: relative;
+    background-color: #263238;
+}
+.footer{
+    min-height: 100px;
+    background-color: #263238;
+    color: #fff;  
+    padding: 10px 0;
 }
 
 .filter-left{
@@ -55,6 +65,34 @@
 .grid-row{
     background-color: #f9f9f9;
 }
+
+.nav-custom{
+    top: 51px;
+    margin-left: 100px;
+}
+
+.navbar-nav > li{
+    margin: 0 16px;
+}
+
+.navbar-nav > li > a{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 0px;
+    opacity: .65;    
+}
+
+.navbar-nav > li > a:hover {
+    background-color: transparent;
+    opacity: 1 !important;
+}
+
+li.dropdown:hover > .dropdown-menu{
+    display: block;
+}
+
 
 /*Pagination Style*/
 .pagination-ys {

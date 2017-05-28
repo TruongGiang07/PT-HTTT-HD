@@ -42,7 +42,8 @@
         <div class="col-md-12">
             <h3>Báo Cáo Giao Dịch</h3>
             <asp:GridView ID="gvBaoCaoGiaoDich" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="4" 
-                OnPageIndexChanging="gvBaoCaoGiaoDich_PageIndexChanging" Width="100%" CssClass="table table-bordered" RowStyle-CssClass="grid-row" AlternatingRowStyle-BackColor="White">
+                Width="100%" CssClass="table table-bordered" RowStyle-CssClass="grid-row" AlternatingRowStyle-BackColor="White"
+                OnPageIndexChanging="gvBaoCaoGiaoDich_PageIndexChanging" OnRowDataBound="gvBaoCaoGiaoDich_RowDataBound">
                 <PagerSettings Mode="Numeric" />  
                 <PagerStyle CssClass="pagination-ys"/>            
                 <Columns>

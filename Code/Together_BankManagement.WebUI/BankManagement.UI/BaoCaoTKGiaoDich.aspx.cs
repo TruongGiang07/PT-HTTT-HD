@@ -9,6 +9,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BankManagement.UI.Common;
 using System.Globalization;
+using System.Data;
 
 namespace BankManagement.UI
 {
@@ -17,6 +18,8 @@ namespace BankManagement.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             //BindRefData();
+            gvBaoCaoGiaoDich.DataSource = GetTestData();
+            gvBaoCaoGiaoDich.DataBind();
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -67,6 +70,15 @@ namespace BankManagement.UI
             gvBaoCaoGiaoDich.PageIndex = e.NewPageIndex;
             gvBaoCaoGiaoDich.DataSource = GetTestData();
             gvBaoCaoGiaoDich.DataBind();
+        }
+
+        protected void gvBaoCaoGiaoDich_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                TKGD row = (TKGD)e.Row.DataItem;
+                e.Row.Cells[3].Text = string.Format("<a href='#'>{0}</a>", row.slGDRutTien);
+            }
         }
                 
     }

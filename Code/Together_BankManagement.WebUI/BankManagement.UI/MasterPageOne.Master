@@ -8,22 +8,51 @@
     <link href="assets/js/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/master.css" rel="stylesheet" />
     <script src="assets/js/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <header class="header">
-            abc
+            <nav class="navbar nav-custom">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Trang Chủ</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#">Giao Dịch
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Rút Tiền</a></li>
+                                <li><a href="#">Chuyển Tiền</a></li>
+                                <li><a href="#">Gửi Tiền</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Khách Hàng</a>
+                        </li>
+                        <li><a href="#">Sổ Tiết Kiệm
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </header>
 
-        <div>
-            <asp:ContentPlaceHolder ID="BodyContainer" runat="server">
-            </asp:ContentPlaceHolder>
+        <div class="container-custom">
+            <div style="background-color: #fff; padding: 0 20px;">
+                <asp:ContentPlaceHolder ID="BodyContainer" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
         </div>
 
-        <footer>
-            Footer
+        <footer class="footer text-center">
+            <p>NHÓM TOGETHER</p>
+            <p>Nguyễn Trường Giang</p>
+            <p>Phạm Đăng Khoa</p>
+            <p>Huỳnh Chinh Hào</p>
+            <p>Lâm Đỗ Hoàng Quân</p>
+            <p>Nguyễn Hữu Thiên</p>            
         </footer>
     </form>
 </body>
