@@ -16,18 +16,19 @@ namespace BankManagement.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindRefData();
+            //BindRefData();
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            var filter = new
-            {
-                fromDate = DateTime.ParseExact(dtTuNgay.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd"),
-                toDate = DateTime.ParseExact(dtDenNgay.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd")
-            };
+            //var filter = new
+            //{
+            //    fromDate = DateTime.ParseExact(dtTuNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd"),
+            //    toDate = DateTime.ParseExact(dtDenNgay.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd")
+            //};
 
-            gvBaoCaoGiaoDich.DataSource = ServiceConnector.GetDataFromServiceByPost<TKGD>("api/tongketgd/gettkgd", filter, true);
+            //gvBaoCaoGiaoDich.DataSource = ServiceConnector.GetDataFromServiceByPost<TKGD>("api/tongketgd/gettkgd", filter, true);
+            gvBaoCaoGiaoDich.DataSource = GetTestData();
             gvBaoCaoGiaoDich.DataBind();
         }
 
@@ -38,6 +39,34 @@ namespace BankManagement.UI
 
             cbxChiNhanh.DataSource = ServiceConnector.GetDataFromServiceByGet<ChiNhanh>("api/chinhanh/all", true);
             cbxChiNhanh.DataBind();
+        }
+
+        private List<TKGD> GetTestData()
+        {
+            var res = new List<TKGD>();
+            for (int i = 1; i <= 10; i++)
+            {
+                var item = new TKGD();
+                item.ngayGiaoDich = DateTime.Now;
+                item.tenChiNhanh = "CN " + i;
+                item.tenTruSo = "TS " + i;
+                item.slGDRutTien = 123;
+                item.soTienGDRutTien = 3454000;
+                item.slGDGuiTien = 458;
+                item.soTienGDGuiTien = 456000000;
+                item.slGDChuyenTien = 999;
+                item.soTienGDChuyenTien = 24000000;
+                res.Add(item);
+            }
+
+            return res;
+        }
+
+        protected void gvBaoCaoGiaoDich_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvBaoCaoGiaoDich.PageIndex = e.NewPageIndex;
+            gvBaoCaoGiaoDich.DataSource = GetTestData();
+            gvBaoCaoGiaoDich.DataBind();
         }
                 
     }

@@ -15,7 +15,7 @@
                     <label>Trụ Sở</label>
                 </div>
                 <div>
-                    <label>Chi Nhánh</label>
+                    <label>Chi Nhánh</label>                    
                 </div>
             </div>
             <div class="filter-right">
@@ -41,7 +41,10 @@
     <div class="row">
         <div class="col-md-12">
             <h3>Báo Cáo Giao Dịch</h3>
-            <asp:GridView ID="gvBaoCaoGiaoDich" runat="server" AutoGenerateColumns="false">
+            <asp:GridView ID="gvBaoCaoGiaoDich" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="4" 
+                OnPageIndexChanging="gvBaoCaoGiaoDich_PageIndexChanging" Width="100%" CssClass="table table-bordered" RowStyle-CssClass="grid-row" AlternatingRowStyle-BackColor="White">
+                <PagerSettings Mode="Numeric" />  
+                <PagerStyle CssClass="pagination-ys"/>            
                 <Columns>
                     <asp:BoundField DataField="ngayGiaoDich" DataFormatString="{0:dd/MM/yyyy}" HeaderText="Ngày Giao Dịch" />
                     <asp:BoundField DataField="tenTruSo" HeaderText="Trụ Sở" />
@@ -61,7 +64,7 @@
         $('#dtNgayGiaoDich .input-daterange').datepicker({
             autoclose: true,
             endDate: "-1d",
-            dateFormat: "yyyy-MM-dd"
+            format: "dd/mm/yyyy"
         });
     </script>
 </asp:Content>
