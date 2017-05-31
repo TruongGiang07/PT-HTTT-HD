@@ -44,6 +44,22 @@ public class KhachHangDAL {
         }
         return ds;
     }
+	
+	public static List<KhachHang> getKHByCMND( String cmnd)
+    {
+        List<KhachHang> ds = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            String hql = "select kh from KhachHang kh where kh.soCMND = " + cmnd;
+            Query query = session.createQuery(hql);
+            ds = query.list();
+        } catch (HibernateException ex) {
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return ds;
+    }
 
     public static boolean addKH(KhachHang kh)
     {

@@ -16,6 +16,10 @@ public class KhachHangBUS {
     public static List<KhachHang> getKHByID (int makh){
         return  KhachHangDAL.getKHByID(makh);
     }
+	
+	public static List<KhachHang> getKHByCMND (String cmnd){
+        return  KhachHangDAL.getKHByCMND(cmnd);
+    }
 
     public static boolean addKH(KhachHang kh) {
         return KhachHangDAL.addKH(kh);

@@ -23,9 +23,15 @@ public class KhachHangController {
         return listKH;
     }
 
-    @RequestMapping(value = "{makh}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    @RequestMapping(value = "id/{makh}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<KhachHang> GetKHById(@PathVariable int makh) {
         List<KhachHang> listKH = KhachHangBUS.getKHByID(makh);
+        return listKH;
+    }
+	
+	@RequestMapping(value = "cmnd/{cmnd}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<KhachHang> GetKHByCMND(@PathVariable String cmnd) {
+        List<KhachHang> listKH = KhachHangBUS.getKHByCMND(cmnd);
         return listKH;
     }
 
