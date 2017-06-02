@@ -22,3 +22,9 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+/bin/
+
+### Eclipse ###
+.classpath
+.project
+.settings/
