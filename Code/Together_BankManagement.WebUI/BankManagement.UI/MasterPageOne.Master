@@ -9,10 +9,11 @@
     <link href="assets/css/master.css" rel="stylesheet" />
     <script src="assets/js/jquery-2.1.4.min.js"></script>
     <script src="assets/js/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/common.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body class="master-one">
     <form id="form1" runat="server">
         <header class="header">
             <nav class="navbar nav-custom">
@@ -29,7 +30,7 @@
                                 <li><a href="#">Gửi Tiền</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Khách Hàng</a>
+                        <li><a href="KhachHang.aspx">Khách Hàng</a>
                         </li>
                         <li><a href="#">Sổ Tiết Kiệm
                         </a>
@@ -40,7 +41,7 @@
         </header>
 
         <div class="container-custom">
-            <div style="background-color: #fff; padding: 0 20px;">
+            <div style="background-color: #fff; padding: 10px 20px 20px 20px;">
                 <asp:ContentPlaceHolder ID="BodyContainer" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
@@ -52,8 +53,25 @@
             <p>Phạm Đăng Khoa</p>
             <p>Huỳnh Chinh Hào</p>
             <p>Lâm Đỗ Hoàng Quân</p>
-            <p>Nguyễn Hữu Thiên</p>            
+            <p>Nguyễn Hữu Thiên</p>
         </footer>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog" style="width: 755px;">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="frameContainer1" src="" frameborder="0" width="100%" scrolling="no"></iframe>
+                    </div>                    
+                </div>
+
+            </div>
+        </div>
     </form>
 </body>
 </html>

@@ -66,6 +66,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\js\common.js" />
+    <Content Include="BCTKGD_XemDSKhachHang.aspx" />
+    <Content Include="InsertUpdateKhachHang.aspx" />
+    <Content Include="KhachHang.aspx" />
     <Content Include="MasterPageOne.Master" />
     <Content Include="assets\js\jquery-2.1.4.min.map" />
     <Content Include="assets\js\bootstrap-3.3.4-dist\css\bootstrap-theme.css.map" />
@@ -83,6 +87,7 @@
     <Content Include="assets\js\bootstrap-datepicker-1.6.4-dist\css\bootstrap-datepicker3.standalone.css.map" />
     <Content Include="assets\js\bootstrap-datepicker-1.6.4-dist\css\bootstrap-datepicker3.standalone.min.css.map" />
     <Content Include="packages.config" />
+    <Content Include="MasterPageModal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -190,8 +195,36 @@
     <Compile Include="BaoCaoTKGiaoDich.aspx.designer.cs">
       <DependentUpon>BaoCaoTKGiaoDich.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BCTKGD_XemDSKhachHang.aspx.cs">
+      <DependentUpon>BCTKGD_XemDSKhachHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BCTKGD_XemDSKhachHang.aspx.designer.cs">
+      <DependentUpon>BCTKGD_XemDSKhachHang.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InsertUpdateKhachHang.aspx.cs">
+      <DependentUpon>InsertUpdateKhachHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertUpdateKhachHang.aspx.designer.cs">
+      <DependentUpon>InsertUpdateKhachHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.aspx.cs">
+      <DependentUpon>KhachHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KhachHang.aspx.designer.cs">
+      <DependentUpon>KhachHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageModal.Master.cs">
+      <DependentUpon>MasterPageModal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageModal.Master.designer.cs">
+      <DependentUpon>MasterPageModal.Master</DependentUpon>
     </Compile>
     <Compile Include="MasterPageOne.Master.cs">
       <DependentUpon>MasterPageOne.Master</DependentUpon>

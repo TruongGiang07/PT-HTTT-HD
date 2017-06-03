@@ -77,7 +77,8 @@ namespace BankManagement.UI
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 TKGD row = (TKGD)e.Row.DataItem;
-                e.Row.Cells[3].Text = string.Format("<a href='#'>{0}</a>", row.slGDRutTien);
+                string query = string.Format("ngayGD={0}&truSo={1}&chiNhanh={2}", row.ngayGiaoDich.ToShortDateString(), row.tenTruSo, row.tenChiNhanh);
+                e.Row.Cells[3].Text = string.Format("<a href='#' onclick=\"openPopupModal('{0}')\">{1}</a>", "BCTKGD_XemDSKhachHang.aspx?" + query, row.slGDRutTien);
             }
         }
                 
