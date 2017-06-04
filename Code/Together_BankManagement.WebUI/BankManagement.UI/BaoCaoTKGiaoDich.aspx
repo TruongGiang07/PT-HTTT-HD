@@ -3,6 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="assets/js/bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
     <script src="assets/js/bootstrap-datepicker-1.6.4-dist/js/bootstrap-datepicker.min.js"></script>
+
+    <script type="text/javascript">
+        $('#dtNgayGiaoDich .input-daterange').datepicker({
+            autoclose: true,
+            endDate: "-1d",
+            format: "dd/mm/yyyy"
+        });        
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContainer" runat="server">
     <div class="row">
@@ -15,14 +23,14 @@
                     <label>Trụ Sở</label>
                 </div>
                 <div>
-                    <label>Chi Nhánh</label>                    
+                    <label>Chi Nhánh</label>
                 </div>
             </div>
             <div class="filter-right">
                 <div id="dtNgayGiaoDich">
                     <div class="input-group input-daterange">
                         <asp:TextBox ID="dtTuNgay" runat="server" CssClass="form-control" Width="140px" /><span class="input-group-addon">Đến</span>
-                        <asp:TextBox ID="dtDenNgay" runat="server" CssClass="form-control" Width="140px"/>
+                        <asp:TextBox ID="dtDenNgay" runat="server" CssClass="form-control" Width="140px" />
                     </div>
                 </div>
                 <div class="dropdown">
@@ -41,11 +49,11 @@
     <div class="row">
         <div class="col-md-12">
             <h3>Báo Cáo Giao Dịch</h3>
-            <asp:GridView ID="gvBaoCaoGiaoDich" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="4" 
+            <asp:GridView ID="gvBaoCaoGiaoDich" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="6"
                 Width="100%" CssClass="table table-bordered" RowStyle-CssClass="grid-row" AlternatingRowStyle-BackColor="White"
                 OnPageIndexChanging="gvBaoCaoGiaoDich_PageIndexChanging" OnRowDataBound="gvBaoCaoGiaoDich_RowDataBound">
-                <PagerSettings Mode="Numeric" />  
-                <PagerStyle CssClass="pagination-ys"/>            
+                <PagerSettings Mode="Numeric" />
+                <PagerStyle CssClass="pagination-ys" />
                 <Columns>
                     <asp:BoundField DataField="ngayGiaoDich" DataFormatString="{0:dd/MM/yyyy}" HeaderText="Ngày Giao Dịch" />
                     <asp:BoundField DataField="tenTruSo" HeaderText="Trụ Sở" />
@@ -60,12 +68,5 @@
             </asp:GridView>
         </div>
     </div>
-
-    <script type="text/javascript">
-        $('#dtNgayGiaoDich .input-daterange').datepicker({
-            autoclose: true,
-            endDate: "-1d",
-            format: "dd/mm/yyyy"
-        });
-    </script>
+    
 </asp:Content>

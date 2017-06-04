@@ -13,6 +13,15 @@ namespace BankManagement.UI {
     public partial class InsertUpdateKhachHang {
         
         /// <summary>
+        /// divLabelMaKH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLabelMaKH;
+        
+        /// <summary>
         /// lbmakh control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace BankManagement.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbmakh;
+        
+        /// <summary>
+        /// divTextboxMaKH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divTextboxMaKH;
         
         /// <summary>
         /// txtmakh control.
@@ -94,15 +112,6 @@ namespace BankManagement.UI {
         protected global::System.Web.UI.WebControls.TextBox txtdclienlac;
         
         /// <summary>
-        /// txtsdtaikhoan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtsdtaikhoan;
-        
-        /// <summary>
         /// cbxgioitinh control.
         /// </summary>
         /// <remarks>
@@ -148,30 +157,21 @@ namespace BankManagement.UI {
         protected global::System.Web.UI.WebControls.DropDownList cbxchinhanh;
         
         /// <summary>
-        /// btninsert control.
+        /// btnInsertOrUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btninsert;
+        protected global::System.Web.UI.WebControls.Button btnInsertOrUpdate;
         
         /// <summary>
-        /// btnipDate control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnipDate;
-        
-        /// <summary>
-        /// btndelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btndelete;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }
