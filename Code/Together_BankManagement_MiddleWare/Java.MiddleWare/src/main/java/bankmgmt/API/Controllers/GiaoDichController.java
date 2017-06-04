@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Created by TruongGiang on 5/18/2017.
+ */
 
 @RequestMapping("/api/giaodich")
 @RestController
@@ -16,6 +19,19 @@ public class GiaoDichController {
 
     @RequestMapping(value = "all", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<GiaoDich> GetAll() {
-        return GiaoDichBUS.getAll();
+        List<GiaoDich> listGD = GiaoDichBUS.getAll();
+		return listGD;
+    }
+	
+	@RequestMapping(value = "cmnd/{cmnd}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<GiaoDich> GetGDByKHCMND(@PathVariable String cmnd) {
+        List<GiaoDich> listGD = GiaoDichBUS.getGDByKHCMND(cmnd);
+        return listGD;
+    }
+	
+	@RequestMapping(value = "ngaygd/{ngaygd}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<GiaoDich> GetGDByKHCMND(@PathVariable String ngaygd) {
+        List<GiaoDich> listGD = GiaoDichBUS.getGDByDate(ngaygd);
+        return listGD;
     }
 }
