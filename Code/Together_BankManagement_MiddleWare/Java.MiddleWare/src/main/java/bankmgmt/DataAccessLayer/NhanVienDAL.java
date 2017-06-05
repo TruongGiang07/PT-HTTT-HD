@@ -48,6 +48,37 @@ public class NhanVienDAL {
         }
         return true;
     }
+    public static List<NhanVien> getNVByID( int manv)
+    {
+        List<NhanVien> ds = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            String hql = "select nv from NhanVien nv where nv.maNhanVien = " + manv;
+            Query query = session.createQuery(hql);
+            ds = query.list();
+        } catch (HibernateException ex) {
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return ds;
+    }
+
+    public static List<NhanVien> getNVByHoTen(String hoten)
+    {
+        List<NhanVien> ds = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            String hql = "select nv from NhanVien nv where nv.hoTen LIKE '%"+hoten+"%' ";
+            Query query = session.createQuery(hql);
+            ds = query.list();
+        } catch (HibernateException ex) {
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return ds;
+    }
     public static boolean up(NhanVien nv)
     {
         Session session = HibernateUtil.getSessionFactory().openSession();

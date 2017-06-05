@@ -5,10 +5,7 @@ import bankmgmt.BusinessLayer.NhanVienBUS;
 import bankmgmt.POJO.NhanVien;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import java.util.List;
 
@@ -23,6 +20,17 @@ public class NhanVienController {
     @RequestMapping(value = "all", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<NhanVien> GetAll() {
         List<NhanVien> listNV = NhanVienBUS.getAll();
+        return listNV;
+    }
+    @RequestMapping(value = "id/{manv}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<NhanVien> GetNVById(@PathVariable int manv) {
+        List<NhanVien> listNV = NhanVienBUS.getNVByID(manv);
+        return listNV;
+    }
+
+    @RequestMapping(value = "hoten/{hoten}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<NhanVien> GetNVByHoTen(@PathVariable String hoten) {
+        List<NhanVien> listNV = NhanVienBUS.getNVByHoTen(hoten);
         return listNV;
     }
     /*

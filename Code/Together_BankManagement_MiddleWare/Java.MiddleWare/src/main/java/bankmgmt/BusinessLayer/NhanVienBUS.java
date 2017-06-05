@@ -19,6 +19,13 @@ public class NhanVienBUS {
     public static boolean up(NhanVien nv) {
         return NhanVienDAL.up(nv);
     }
+    public static List<NhanVien> getNVByID (int makh){
+        return  NhanVienDAL.getNVByID(makh);
+    }
+
+    public static List<NhanVien> getNVByHoTen (String hoten){
+        return  NhanVienDAL.getNVByHoTen(hoten);
+    }
     public static boolean del(NhanVien nv){
         return NhanVienDAL.del(nv);
     }

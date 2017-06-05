@@ -1,4 +1,4 @@
-package src.main.java.bankmgmt.POJO;
+package bankmgmt.POJO;
 
 import java.sql.Date;
 

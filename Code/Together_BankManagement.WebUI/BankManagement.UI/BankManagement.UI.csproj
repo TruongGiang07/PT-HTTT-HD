@@ -69,6 +69,7 @@
     <Content Include="assets\js\common.js" />
     <Content Include="BCTKGD_XemDSKhachHang.aspx" />
     <Content Include="InsertUpdateKhachHang.aspx" />
+    <Content Include="InsertUpdateNhanVien.aspx" />
     <Content Include="KhachHang.aspx" />
     <Content Include="MasterPageOne.Master" />
     <Content Include="assets\js\jquery-2.1.4.min.map" />
@@ -86,6 +87,7 @@
     <Content Include="assets\js\bootstrap-datepicker-1.6.4-dist\css\bootstrap-datepicker3.min.css.map" />
     <Content Include="assets\js\bootstrap-datepicker-1.6.4-dist\css\bootstrap-datepicker3.standalone.css.map" />
     <Content Include="assets\js\bootstrap-datepicker-1.6.4-dist\css\bootstrap-datepicker3.standalone.min.css.map" />
+    <Content Include="NhanVien.aspx" />
     <Content Include="packages.config" />
     <Content Include="MasterPageModal.Master" />
     <None Include="Web.Debug.config">
@@ -187,7 +189,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\ConfigsGetter.cs" />
     <Compile Include="BaoCaoTKGiaoDich.aspx.cs">
       <DependentUpon>BaoCaoTKGiaoDich.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -212,6 +213,13 @@
     <Compile Include="InsertUpdateKhachHang.aspx.designer.cs">
       <DependentUpon>InsertUpdateKhachHang.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InsertUpdateNhanVien.aspx.cs">
+      <DependentUpon>InsertUpdateNhanVien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertUpdateNhanVien.aspx.designer.cs">
+      <DependentUpon>InsertUpdateNhanVien.aspx</DependentUpon>
+    </Compile>
     <Compile Include="KhachHang.aspx.cs">
       <DependentUpon>KhachHang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -232,6 +240,13 @@
     </Compile>
     <Compile Include="MasterPageOne.Master.designer.cs">
       <DependentUpon>MasterPageOne.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.aspx.cs">
+      <DependentUpon>NhanVien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NhanVien.aspx.designer.cs">
+      <DependentUpon>NhanVien.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
