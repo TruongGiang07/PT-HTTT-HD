@@ -29,9 +29,9 @@ public class GiaoDichController {
         return listGD;
     }
 	
-	@RequestMapping(value = "/{ngaygd}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public List<GiaoDich> GetGDByKHCMND(@PathVariable @RequestParam(value="ngaygd") String ngaygd) {
-        List<GiaoDich> listGD = GiaoDichBUS.getGDByDate(ngaygd);
+	@RequestMapping(value = "/{ngaygiaodich}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<GiaoDich> GetGDByKHCMND(@PathVariable @RequestParam(value="ngaygiaodich") String ngaygiaodich) {
+        List<GiaoDich> listGD = GiaoDichBUS.getGDByDate(ngaygiaodich);
         return listGD;
     }
 }

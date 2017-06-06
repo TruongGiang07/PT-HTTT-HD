@@ -16,7 +16,7 @@ public class GiaoDichBUS {
         return GiaoDichDAL.getGDByKHCMND(string cmnd)();
     }
 	
-	public static List<GiaoDich> getGDByDate(string ngaygd){
-        return GiaoDichDAL.getGDByDate(string ngaygd);
+	public static List<GiaoDich> getGDByDate(string ngaygiaodich){
+        return GiaoDichDAL.getGDByDate(string ngaygiaodich);
     }
 }

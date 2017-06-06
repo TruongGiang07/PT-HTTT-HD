@@ -32,7 +32,7 @@ public class GiaoDichDAL {
         List<GiaoDich> ds = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String hql = "select gd from GiaoDich gd where gd.maKhachHang in (select kh.maKhachHang from KhachHang kh where kh.soCMND like '" + cmnd + "')";
+            String hql = "select gd from GiaoDich gd where gd.maKHGiaoDich in (select kh.maKhachHang from KhachHang kh where kh.soCMND like '" + cmnd + "')";
             Query query = session.createQuery(hql);
             ds = query.list();
         } catch (HibernateException ex) {
@@ -43,12 +43,12 @@ public class GiaoDichDAL {
         return ds;
     }
 	
-	public static List<GiaoDich> getGDByDate(string ngaygd)
+	public static List<GiaoDich> getGDByDate(string ngaygiaodich)
     {
         List<GiaoDich> ds = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String hql = "select gd from GiaoDich gd where gd.ngayGD = '" + ngaygd + "'";
+            String hql = "select gd from GiaoDich gd where gd.ngayGiaoDich = '" + ngaygiaodich + "'";
             Query query = session.createQuery(hql);
             ds = query.list();
         } catch (HibernateException ex) {
