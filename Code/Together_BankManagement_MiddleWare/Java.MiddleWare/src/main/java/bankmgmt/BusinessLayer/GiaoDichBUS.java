@@ -12,11 +12,11 @@ public class GiaoDichBUS {
         return GiaoDichDAL.getAll();
     }
 	
-	public static List<GiaoDich> getGDByKHCMND(string cmnd){
-        return GiaoDichDAL.getGDByKHCMND(string cmnd)();
+	public static List<GiaoDich> getGDByKHCMND(String cmnd){
+        return GiaoDichDAL.getGDByKHCMND(cmnd);
     }
 	
-	public static List<GiaoDich> getGDByDate(string ngaygiaodich){
-        return GiaoDichDAL.getGDByDate(string ngaygiaodich);
+	public static List<GiaoDich> getGDByDate(String ngaygd){
+        return GiaoDichDAL.getGDByDate(ngaygd);
     }
 }

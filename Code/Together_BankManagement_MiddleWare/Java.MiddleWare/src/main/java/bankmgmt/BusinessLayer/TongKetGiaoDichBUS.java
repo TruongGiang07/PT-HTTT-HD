@@ -1,9 +1,7 @@
 package bankmgmt.BusinessLayer;
 
 import bankmgmt.DataAccessLayer.TongKetGiaoDichDAL;
-import bankmgmt.POJO.TKGDFilter;
-import bankmgmt.POJO.TKGDViewModel;
-import bankmgmt.POJO.TongKetGiaoDich;
+import bankmgmt.POJO.*;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -32,6 +30,21 @@ public class TongKetGiaoDichBUS {
             item.setSoTienGDGuiTien(Double.valueOf(obj[6].toString()));
             item.setSlGDChuyenTien(Integer.valueOf(obj[7].toString()));
             item.setSoTienGDChuyenTien(Double.valueOf(obj[8].toString()));
+            result.add(item);
+        }
+        return result;
+    }
+
+    public static List<TKGDDetailViewModel> getDSGDByNgay(TKGDDetailParam opt){
+        List<TKGDDetailViewModel> result = new ArrayList<TKGDDetailViewModel>();
+        List<Object[]> temp = TongKetGiaoDichDAL.getDSGDByNgay(opt);
+        for (Object[] obj : temp) {
+            TKGDDetailViewModel item = new TKGDDetailViewModel();
+            item.setMaKhachHang(Integer.valueOf(obj[0].toString()));
+            item.setHoTen(obj[1].toString());
+            item.setSoCMND(obj[2].toString());
+            item.setSoTienGD(Double.valueOf(obj[3].toString()));
+            item.setLoaiGD(obj[4].toString());
             result.add(item);
         }
         return result;

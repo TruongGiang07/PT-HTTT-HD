@@ -50,7 +50,7 @@ public class KhachHangDAL {
         List<KhachHang> ds = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String hql = "select kh from KhachHang kh where kh.soCMND = " + cmnd;
+            String hql = "select kh from KhachHang kh where kh.soCMND = '" + cmnd + "'";
             Query query = session.createQuery(hql);
             ds = query.list();
         } catch (HibernateException ex) {

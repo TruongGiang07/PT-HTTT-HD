@@ -5,20 +5,20 @@
 
 <hibernate-mapping>
     <class catalog="QL_NGAN_HANG" name="bankmgmt.POJO.GiaoDich" table="GiaoDich" schema="dbo">
-        <id name="maGiaoDich" type="integer">
+        <id name="maGD" type="integer">
             <column name="MaGiaoDich"/>
             <generator class="identity"/>
         </id>
-        <property name="soTienGiaoDich" type="integer">
+        <property name="soTienGD" type="double">
             <column name="SoTienGiaoDich"/>
         </property>
-        <property name="ngayGiaoDich" type="date">
+        <property name="ngayGD" type="date">
             <column name="NgayGiaoDich"/>
         </property>
-        <property name="maKHGiaoDich" type="integer">
+        <property name="maKhachHang" type="integer">
             <column name="MaKHGiaoDich"/>
         </property>
-        <property name="maGDVien" type="integer">
+        <property name="maNhanVien" type="integer">
             <column name="MaGDVien"/>
         </property>
         <property name="loaiGD" type="integer">

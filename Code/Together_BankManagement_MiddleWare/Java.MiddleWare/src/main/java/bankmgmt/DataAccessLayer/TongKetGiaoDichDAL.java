@@ -1,5 +1,6 @@
 package bankmgmt.DataAccessLayer;
 
+import bankmgmt.POJO.TKGDDetailParam;
 import bankmgmt.POJO.TKGDFilter;
 import bankmgmt.POJO.TongKetGiaoDich;
 import bankmgmt.Utilities.HibernateUtil;
@@ -48,6 +49,35 @@ public class TongKetGiaoDichDAL {
             Query query = session.createQuery(hql);
             query.setDate("fromDate", filter.getFromDate());
             query.setDate("toDate", filter.getToDate());
+            ds = query.list();
+        } catch (HibernateException ex) {
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return ds;
+    }
+
+    public static List<Object[]> getDSGDByNgay(TKGDDetailParam opt){
+        List<Object[]> ds = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            String hql = "select kh.MaKhachHang, kh.HoTen, kh.SoCMND, gd.SoTienGiaoDich, gd.LoaiGD " +
+                    " from GiaoDich gd, KhachHang kh, ChiNhanh cn" +
+                    " where gd.MaKHGiaoDich = kh.MaKhachHang and kh.MaCNDangky = cn.MaChiNhanh" +
+                    " and gd.NgayGiaoDich = :ngayGD and cn.MaChiNhanh = :maCN and cn.MaTruSoTrucThuoc = :maTS " +
+                    " UNION " +
+                    " select kh.MaKhachHang, kh.HoTen, kh.SoCMND, gdct.SoTienChuyen, 3 as loaiGD " +
+                    " from GiaoDichChuyenTien gdct, KhachHang kh, ChiNhanh cn" +
+                    " where gdct.MaKHChuyen = kh.MaKhachHang and kh.MaCNDangky = cn.MaChiNhanh" +
+                    " and gdct.NgayChuyen = :ngayGD and cn.MaChiNhanh = :maCN and cn.MaTruSoTrucThuoc = :maTS ";
+
+
+            Query query = session.createSQLQuery(hql);
+
+            query.setDate("ngayGD", opt.getNgayGiaoDich());
+            query.setInteger("maCN", opt.getMaChiNhanh());
+            query.setInteger("maTS", opt.getMaTruSo());
             ds = query.list();
         } catch (HibernateException ex) {
             System.err.println(ex);
