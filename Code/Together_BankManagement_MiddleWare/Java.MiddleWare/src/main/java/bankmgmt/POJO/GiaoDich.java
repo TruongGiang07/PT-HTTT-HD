@@ -46,7 +46,7 @@ public class GiaoDich{
 	    }
 		
 	    public int getLoaigd() {
-	        return loaigd;
+	        return loaiGD;
 	    }
 
 		public void setLoaiGD(int loaiGD) {
@@ -57,7 +57,7 @@ public class GiaoDich{
 	        return ngayGD;
 	    }
 
-		public void setNgayGD(Timestamp ngayGD) {
+		public void setNgayGD(Date ngayGD) {
 	        this.ngayGD = ngayGD;
 	    }
 

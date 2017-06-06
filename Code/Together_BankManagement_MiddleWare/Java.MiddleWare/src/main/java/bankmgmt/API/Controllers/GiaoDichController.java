@@ -23,14 +23,14 @@ public class GiaoDichController {
 		return listGD;
     }
 	
-	@RequestMapping(value = "cmnd/{cmnd}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public List<GiaoDich> GetGDByKHCMND(@PathVariable String cmnd) {
+	@RequestMapping(value = "/{cmnd}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<GiaoDich> GetGDByKHCMND(@PathVariable @RequestParam(value="cmnd") String cmnd) {
         List<GiaoDich> listGD = GiaoDichBUS.getGDByKHCMND(cmnd);
         return listGD;
     }
 	
-	@RequestMapping(value = "ngaygd/{ngaygd}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public List<GiaoDich> GetGDByKHCMND(@PathVariable String ngaygd) {
+	@RequestMapping(value = "/{ngaygd}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<GiaoDich> GetGDByKHCMND(@PathVariable @RequestParam(value="ngaygd") String ngaygd) {
         List<GiaoDich> listGD = GiaoDichBUS.getGDByDate(ngaygd);
         return listGD;
     }
