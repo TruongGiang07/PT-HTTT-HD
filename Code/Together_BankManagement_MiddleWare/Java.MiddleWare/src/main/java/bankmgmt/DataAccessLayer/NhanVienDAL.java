@@ -14,12 +14,14 @@ import java.util.List;
  * Created by TruongGiang on 5/7/2017.
  */
 public class NhanVienDAL {
-    public static List<NhanVien> getAll()
+    public static List<Object[]> getAll()
     {
-        List<NhanVien> ds = null;
+        List<Object[]> ds = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String hql = "select nv from NhanVien nv";
+            String hql = "select nv.maNhanVien, nv.hoTen, nv.ngaySinh, nv.soDienThoai, nv.diaChi, nv.gioiTinh, cn.tenChiNhanh, nv.tenDangNhap, nv.matKhau " +
+                    " from NhanVien nv, ChiNhanh cn " +
+                    " where nv.maCNLamViec = cn.maChiNhanh";
             Query query = session.createQuery(hql);
             ds = query.list();
         } catch (HibernateException ex) {
@@ -48,12 +50,14 @@ public class NhanVienDAL {
         }
         return true;
     }
-    public static List<NhanVien> getNVByID( int manv)
+    public static List<Object[]> getNVByID( int manv)
     {
-        List<NhanVien> ds = null;
+        List<Object[]> ds = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String hql = "select nv from NhanVien nv where nv.maNhanVien = " + manv;
+            String hql = "select nv.maNhanVien, nv.hoTen, nv.ngaySinh, nv.soDienThoai, nv.diaChi, nv.gioiTinh, cn.tenChiNhanh, nv.tenDangNhap, nv.matKhau " +
+                    " from NhanVien nv, ChiNhanh cn" +
+                    " where nv.maCNLamViec = cn.maChiNhanh and nv.maNhanVien = " + manv;
             Query query = session.createQuery(hql);
             ds = query.list();
         } catch (HibernateException ex) {
@@ -64,12 +68,14 @@ public class NhanVienDAL {
         return ds;
     }
 
-    public static List<NhanVien> getNVByHoTen(String hoten)
+    public static List<Object[]> getNVByHoTen(String hoten)
     {
-        List<NhanVien> ds = null;
+        List<Object[]> ds = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String hql = "select nv from NhanVien nv where nv.hoTen LIKE '%"+hoten+"%' ";
+            String hql = "select nv.maNhanVien, nv.hoTen, nv.ngaySinh, nv.soDienThoai, nv.diaChi, nv.gioiTinh, cn.tenChiNhanh, nv.tenDangNhap, nv.matKhau " +
+                    " from NhanVien nv, ChiNhanh cn" +
+                    " where nv.maCNLamViec = cn.maChiNhanh and nv.hoTen LIKE '%"+hoten+"%' ";
             Query query = session.createQuery(hql);
             ds = query.list();
         } catch (HibernateException ex) {

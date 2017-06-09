@@ -30,6 +30,8 @@ public class TongKetGiaoDichBUS {
             item.setSoTienGDGuiTien(Double.valueOf(obj[6].toString()));
             item.setSlGDChuyenTien(Integer.valueOf(obj[7].toString()));
             item.setSoTienGDChuyenTien(Double.valueOf(obj[8].toString()));
+            item.setMaTruSo(Integer.valueOf(obj[9].toString()));
+            item.setMaChiNhanh(Integer.valueOf(obj[10].toString()));
             result.add(item);
         }
         return result;
@@ -46,6 +48,20 @@ public class TongKetGiaoDichBUS {
             item.setSoTienGD(Double.valueOf(obj[3].toString()));
             item.setLoaiGD(obj[4].toString());
             result.add(item);
+        }
+        return result;
+    }
+
+    public static TKGDTotal getTotalByFilter(TKGDFilter filter){
+        TKGDTotal result = new TKGDTotal();
+        List<Object[]> temp = TongKetGiaoDichDAL.getTotalByFilter(filter);
+        for (Object[] obj : temp) {
+            result.setSumSLGDRutTien(Integer.valueOf(obj[0].toString()));
+            result.setSumSoTienGDRutTien(Double.valueOf(obj[1].toString()));
+            result.setSumSLGDGuiTien(Integer.valueOf(obj[2].toString()));
+            result.setSumSoTienGDGuiTien(Double.valueOf(obj[3].toString()));
+            result.setSumSLGDChuyenTien(Integer.valueOf(obj[4].toString()));
+            result.setSumSoTienGDChuyenTien(Double.valueOf(obj[5].toString()));
         }
         return result;
     }
