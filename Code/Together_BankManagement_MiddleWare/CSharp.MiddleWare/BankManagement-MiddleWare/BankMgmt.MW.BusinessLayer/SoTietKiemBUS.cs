@@ -22,9 +22,23 @@ namespace BankMgmt.MW.BusinessLayer
             return _soTietKiemRepo.GetAll().ToList();
         }
 
+        public SoTietKiem GetSoTietKiem(int stkId)
+        {
+            return _soTietKiemRepo.GetSingle(x => x.MaSoTietKiem.Equals(stkId));
+        }
         public void AddSoTietKiem(params SoTietKiem[] soTietKiem)
         {
             _soTietKiemRepo.Add(soTietKiem);
+        }
+
+        public void RemoveSoTietKiem(params SoTietKiem[] soTietKiem)
+        {
+            _soTietKiemRepo.Remove(soTietKiem);
+        }
+
+        public void UpdateSoTietKiem(params SoTietKiem[] soTietKiem)
+        {
+            _soTietKiemRepo.Update(soTietKiem);
         }
     }
 }
