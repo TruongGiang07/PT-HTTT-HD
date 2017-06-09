@@ -35,27 +35,6 @@ namespace BankManagement.UI
         {
             LoadDSNV();
         }
-   
-      //private List<TKGD> GetTestData()
-      //  {
-      //      var res = new List<TKGD>();
-      //      for (int i = 1; i <= 15; i++)
-      //      {
-      //          var item = new TKGD();
-      //          item.maNhanVien = 1;
-      //          item.hoTen = "Phạm Đăng Khoa";
-      //          item.ngaySinh = DateTime.Now;
-      //          item.dienThoai = "0997007909";
-      //          item.diaChi = "352/40 NĐC";
-      //          item.gioiTinh = false;
-      //          item.chiNhanh = 1;
-      //          item.tenDangNhap = "khoasathu";
-      //          item.matKhau = "12345";
-      //          res.Add(item);
-      //      }
-
-      //      return res;
-      //  }
         
         protected void gvNhanVien_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -74,11 +53,11 @@ namespace BankManagement.UI
           string url = "api/nv/all";
           if (cbxTimKiem.SelectedValue == "MaNV")
           {
-              url = "api/nv/id/" + txtTimKiem.Text.ToString();
+              url = "api/nv/id/" + txtTimKiem.Text.Trim();
           }
-          else if (cbxTimKiem.SelectedValue == "CMND")
+          else if (cbxTimKiem.SelectedValue == "HoTen")
           {
-              url = "api/nv/hoten/" + txtTimKiem.Text.ToString();
+              url = "api/nv/hoten/" + txtTimKiem.Text.Trim();
           }
           gvNhanVien.DataSource = ServiceConnector.GetDataFromServiceByGet<nhanVien>(url, true);
           gvNhanVien.DataBind();
@@ -96,5 +75,6 @@ namespace BankManagement.UI
         public int maCNLamViec { get; set; }
         public string tenDangNhap { get; set; }
         public string matKhau { get; set; }
+        public string tenChiNhanh { get; set; }
     }
 }

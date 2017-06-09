@@ -13,12 +13,21 @@ namespace BankManagement.UI {
     public partial class BCTKGD_XemDSKhachHang {
         
         /// <summary>
-        /// txtTest control.
+        /// lblNgay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtTest;
+        protected global::System.Web.UI.WebControls.Label lblNgay;
+        
+        /// <summary>
+        /// gvDSGiaoDich control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvDSGiaoDich;
     }
 }

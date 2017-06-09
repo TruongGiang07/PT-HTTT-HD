@@ -13,6 +13,24 @@ namespace BankManagement.UI {
     public partial class BaoCaoTKGiaoDich {
         
         /// <summary>
+        /// rdLoaiNgay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rdLoaiNgay;
+        
+        /// <summary>
+        /// dtNgayGiaoDich control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dtNgayGiaoDich;
+        
+        /// <summary>
         /// dtTuNgay control.
         /// </summary>
         /// <remarks>
@@ -29,6 +47,24 @@ namespace BankManagement.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox dtDenNgay;
+        
+        /// <summary>
+        /// dtThang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dtThang;
+        
+        /// <summary>
+        /// dtThangOrNam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dtThangOrNam;
         
         /// <summary>
         /// cbxTruSo control.
@@ -56,6 +92,15 @@ namespace BankManagement.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
+        
+        /// <summary>
+        /// chartContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel chartContainer;
         
         /// <summary>
         /// gvBaoCaoGiaoDich control.

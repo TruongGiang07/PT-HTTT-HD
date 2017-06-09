@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\js\Chart.min.js" />
     <Content Include="assets\js\common.js" />
     <Content Include="BCTKGD_XemDSKhachHang.aspx" />
     <Content Include="InsertUpdateKhachHang.aspx" />
@@ -186,7 +187,9 @@
     <Content Include="assets\js\jquery-2.1.4.min.js" />
     <Content Include="BaoCaoTKGiaoDich.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaoCaoTKGiaoDich.aspx.cs">

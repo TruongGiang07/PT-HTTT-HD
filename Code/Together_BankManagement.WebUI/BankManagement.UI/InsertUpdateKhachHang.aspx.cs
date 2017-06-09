@@ -99,7 +99,10 @@ namespace BankManagement.UI
         private khachHang CreateKhachHang()
         {
             var kh = new khachHang();
-            kh.maKhachHang = _MaKhachHang;
+            if (_IsUpdateMode)
+            {
+                kh.maKhachHang = _MaKhachHang;
+            }
             kh.hoTen = txthoten.Text.Trim();
             kh.soCMND = txtsocmnd.Text.Trim();
             kh.ngaySinh = DateTime.ParseExact(txtngaysinh.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
