@@ -53,8 +53,9 @@ public class KhachHangController {
         }
     }
 
-    @RequestMapping(value = "delkh", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<KhachHang> DelKH(@RequestBody KhachHang kh) {
+    @RequestMapping(value = "delkh/{makh}", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<KhachHang> DelKH(@PathVariable int makh) {
+        KhachHang kh = KhachHangBUS.getKHByID(makh).get(0);
         if (kh != null && KhachHangBUS.delKH(kh)) {
             return new ResponseEntity<KhachHang>(kh, HttpStatus.CREATED);
         } else {

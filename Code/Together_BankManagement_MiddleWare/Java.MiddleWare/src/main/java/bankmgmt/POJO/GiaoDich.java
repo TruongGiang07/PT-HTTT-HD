@@ -1,67 +1,67 @@
 package bankmgmt.POJO;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Created by TruongGiang on 5/7/2017.
  */
 public class GiaoDich{
 	    private int maGD;
-	    private int soTienGD;
+	    private double soTienGD;
 	    private int maKhachHang;
 	    private int maNhanVien;
 	    private int loaiGD;
 	    private Date ngayGD;
-	    
-	    public int getMaGD() {
-	        return maGD;
-	    }
 
-		 public void setMaGD(int maGD) {
-	        this.maGD = maGD;
-	    }
-		
-	    public int getSotiengd() {
-	        return soTienGD;
-	    }
+	public int getMaGD() {
+		return maGD;
+	}
 
-		 public void setSotiengd(int soTienGD) {
-	        this.soTienGD = soTienGD;
-	    }
-		
-	    public int getMaKhachHang() {
-	        return maKhachHang;
-	    }
+	public void setMaGD(int maGD) {
+		this.maGD = maGD;
+	}
 
-		 public void setMaKhachHang(int maKhachHang) {
-	        this.maKhachHang = maKhachHang;
-	    }
-		
-	    public int getMaNhanVien() {
-	        return maNhanVien;
-	    }
+	public double getSoTienGD() {
+		return soTienGD;
+	}
 
-		public void setMaNhanVien(int maNhanVien) {
-	        this.maNhanVien = maNhanVien;
-	    }
-		
-	    public int getLoaigd() {
-	        return loaiGD;
-	    }
+	public void setSoTienGD(double soTienGD) {
+		this.soTienGD = soTienGD;
+	}
 
-		public void setLoaiGD(int loaiGD) {
-	        this.loaiGD = loaiGD;
-	    }
-		
-	    public Date getNgayGD() {
-	        return ngayGD;
-	    }
+	public int getMaKhachHang() {
+		return maKhachHang;
+	}
 
-		public void setNgayGD(Date ngayGD) {
-	        this.ngayGD = ngayGD;
-	    }
+	public void setMaKhachHang(int maKhachHang) {
+		this.maKhachHang = maKhachHang;
+	}
 
-	    @Override
+	public int getMaNhanVien() {
+		return maNhanVien;
+	}
+
+	public void setMaNhanVien(int maNhanVien) {
+		this.maNhanVien = maNhanVien;
+	}
+
+	public int getLoaiGD() {
+		return loaiGD;
+	}
+
+	public void setLoaiGD(int loaiGD) {
+		this.loaiGD = loaiGD;
+	}
+
+	public Date getNgayGD() {
+		return ngayGD;
+	}
+
+	public void setNgayGD(Date ngayGD) {
+		this.ngayGD = ngayGD;
+	}
+
+	@Override
 	    public String toString() {
 	        return "maGD: " + maGD + " - " + "soTienGD: " + soTienGD + " - " + "ngayGD: " + ngayGD.toString() + " - " + "maKhachHang: " + maKhachHang + " - " + "maNhanVien: " + maNhanVien+ " - " + "loaiGD: " + loaiGD;
 	    }

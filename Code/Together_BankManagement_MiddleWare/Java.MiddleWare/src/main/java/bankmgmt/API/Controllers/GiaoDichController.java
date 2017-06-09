@@ -3,6 +3,7 @@ package bankmgmt.API.Controllers;
 import bankmgmt.BusinessLayer.GiaoDichBUS;
 import bankmgmt.POJO.GiaoDich;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,15 +24,15 @@ public class GiaoDichController {
 		return listGD;
     }
 	
-	@RequestMapping(value = "/{cmnd}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public List<GiaoDich> GetGDByKHCMND(@PathVariable @RequestParam(value="cmnd") String cmnd) {
+	@RequestMapping(value = "cmnd/{cmnd}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<GiaoDich> GetGDByKHCMND(@PathVariable String cmnd) {
         List<GiaoDich> listGD = GiaoDichBUS.getGDByKHCMND(cmnd);
         return listGD;
     }
 	
-	@RequestMapping(value = "/{ngaygiaodich}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public List<GiaoDich> GetGDByKHCMND(@PathVariable @RequestParam(value="ngaygiaodich") String ngaygiaodich) {
-        List<GiaoDich> listGD = GiaoDichBUS.getGDByDate(ngaygiaodich);
+	@RequestMapping(value = "ngaygd/{ngaygd}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public List<GiaoDich> getGDByDate(@PathVariable String ngaygd) {
+        List<GiaoDich> listGD = GiaoDichBUS.getGDByDate(ngaygd);
         return listGD;
     }
 }

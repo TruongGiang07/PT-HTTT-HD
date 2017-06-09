@@ -7,6 +7,8 @@ import java.util.Date;
  */
 public class TKGDViewModel {
     private Date ngayGiaoDich;
+    private int maTruSo;
+    private int maChiNhanh;
     private String tenTruSo;
     private String tenChiNhanh;
     private int slGDRutTien;
@@ -15,6 +17,22 @@ public class TKGDViewModel {
     private double soTienGDGuiTien;
     private int slGDChuyenTien;
     private  double soTienGDChuyenTien;
+
+    public int getMaTruSo() {
+        return maTruSo;
+    }
+
+    public void setMaTruSo(int maTruSo) {
+        this.maTruSo = maTruSo;
+    }
+
+    public int getMaChiNhanh() {
+        return maChiNhanh;
+    }
+
+    public void setMaChiNhanh(int maChiNhanh) {
+        this.maChiNhanh = maChiNhanh;
+    }
 
     public Date getNgayGiaoDich() {
         return ngayGiaoDich;

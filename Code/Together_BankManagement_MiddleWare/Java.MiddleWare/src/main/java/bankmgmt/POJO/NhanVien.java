@@ -15,6 +15,23 @@ public class NhanVien {
     private String diaChi;
     private String soDienThoai;
     private int maCNLamViec;
+    private String tenChiNhanh;
+
+    public void setGioiTinh(boolean gioiTinh) {
+        this.gioiTinh = gioiTinh;
+    }
+
+    public boolean isGioiTinh() {
+        return gioiTinh;
+    }
+
+    public String getTenChiNhanh() {
+        return tenChiNhanh;
+    }
+
+    public void setTenChiNhanh(String tenChiNhanh) {
+        this.tenChiNhanh = tenChiNhanh;
+    }
 
     public int getMaNhanVien() {
         return maNhanVien;
@@ -50,9 +67,6 @@ public class NhanVien {
     public void setNgaySinh(Date ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
-
-    public Boolean getGioiTinh() {return gioiTinh;}
-    public void setGioiTinh(boolean gioiTinh) { this.gioiTinh = gioiTinh; }
 
     public String getDiaChi() {
         return diaChi;

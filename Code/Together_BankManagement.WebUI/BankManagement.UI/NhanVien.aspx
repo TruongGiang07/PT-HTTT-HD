@@ -45,7 +45,7 @@
                     <asp:BoundField DataField="soDienThoai" HeaderText="Điện Thoại" />
                     <asp:BoundField DataField="diaChi" HeaderText="Địa Chỉ Thường Trú" />
                     <asp:BoundField DataField="gioiTinh" HeaderText="Giới Tính" />
-                    <asp:BoundField DataField="maCNLamViec" HeaderText="Chi Nhánh" />
+                    <asp:BoundField DataField="tenChiNhanh" HeaderText="Chi Nhánh" />
                     <asp:BoundField DataField="tenDangNhap" HeaderText="Tên Đăng Nhập" />
                     <asp:BoundField DataField="matKhau" HeaderText="Mật Khẩu" />
                 </Columns>

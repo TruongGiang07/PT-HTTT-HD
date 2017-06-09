@@ -114,6 +114,11 @@ li.dropdown:hover > .dropdown-menu{
     border-top: 0px;
     padding-top: 0px;
 }
+.radio-list input {
+    margin-left: 8px;
+}
+
+
 /*Pagination Style*/
 .pagination-ys {
     /*display: inline-block;*/

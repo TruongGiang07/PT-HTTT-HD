@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <div class="filter-left">
-                <div id="divLabelMaKH" runat="server" Visible="False">
+                <div id="divLabelMaKH" runat="server" visible="False">
                     <asp:Label ID="lbmakh" runat="server" Enabled="False" Font-Bold="True">Mã Khách Hàng:</asp:Label>
                 </div>
                 <div>
@@ -31,7 +31,7 @@
                 </div>
                 <div>
                     <label>Địa Chỉ Liên Lạc:</label>
-                </div>                
+                </div>
                 <div>
                     <label>Giới Tính:</label>
                 </div>
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="filter-right">
-                <div id="divTextboxMaKH" runat="server" Visible="False">
+                <div id="divTextboxMaKH" runat="server" visible="False">
                     <asp:TextBox ID="txtmakh" runat="server" CssClass="form-control" Width="316px" Enabled="False" />
                 </div>
                 <div>
@@ -74,7 +74,7 @@
                 </div>
                 <div>
                     <asp:TextBox ID="txtdclienlac" runat="server" CssClass="form-control" Width="316px" />
-                </div>         
+                </div>
                 <div class="dropdown">
                     <asp:DropDownList ID="cbxgioitinh" runat="server" CssClass="form-control" Width="316px" DataValueField="value">
                         <asp:ListItem Value="Nam" Text="Nam"></asp:ListItem>
@@ -101,11 +101,12 @@
                 <div class="dropdown">
                     <asp:DropDownList ID="cbxchinhanh" runat="server" CssClass="form-control" Width="316px" DataValueField="maChiNhanh" DataTextField="tenChiNhanh"></asp:DropDownList>
                 </div>
+                <div class="text-right">
+                    <asp:Button ID="btnInsertOrUpdate" runat="server" Text="Thêm Khách Hàng" CssClass="btn btn-default" OnClick="btnInsertOrUpdate_Click" />
+                    <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="btn btn-default" OnClientClick="return parent.closePopupModal();" />
+                </div>
             </div>
-            <div class="text-right">
-                <asp:Button ID="btnInsertOrUpdate" runat="server" Text="Thêm Khách Hàng" CssClass="btn btn-default" OnClick="btnInsertOrUpdate_Click" />
-                <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="btn btn-default" OnClientClick="return parent.closePopupModal();" />
-            </div>
+
         </div>
     </div>
 

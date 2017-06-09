@@ -9,6 +9,7 @@
     <link href="assets/css/master.css" rel="stylesheet" />
     <script src="assets/js/jquery-2.1.4.min.js"></script>
     <script src="assets/js/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/Chart.min.js"></script>
     <script src="assets/js/common.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -33,6 +34,13 @@
                         <li><a href="KhachHang.aspx">Khách Hàng</a>
                         </li>
                         <li><a href="#">Sổ Tiết Kiệm
+                        </a>
+                        </li>
+
+                        <li><a href="BaoCaoTKGiaoDich.aspx">Báo Cáo Giao Dịch
+                        </a>
+                        </li>
+                        <li><a href="NhanVien.aspx">Quản lý Nhân Viên
                         </a>
                         </li>
                     </ul>
@@ -63,7 +71,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
+                        <h4 class="modal-title" style="color:blue">Modal Header</h4>
                     </div>
                     <div class="modal-body">
                         <iframe id="frameContainer1" src="" frameborder="0" width="100%" scrolling="no"></iframe>

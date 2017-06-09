@@ -36,7 +36,9 @@
         <mapping resource="TongKetGiaoDich.hbm.xml" />
         <mapping resource="TruSo.hbm.xml" />
         <mapping resource="ChiNhanh.hbm.xml" />
-
+        <mapping resource="GiaoDich.hbm.xml" />
+        <mapping resource="GiaoDichChuyenTien.hbm.xml" />
+        <mapping resource="NhanVien.hbm.xml" />
 
     </session-factory>
 </hibernate-configuration>
