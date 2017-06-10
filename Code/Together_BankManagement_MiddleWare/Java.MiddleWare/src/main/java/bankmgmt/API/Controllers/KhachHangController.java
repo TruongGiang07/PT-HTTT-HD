@@ -30,6 +30,7 @@ public class KhachHangController {
     }
 	
 	@RequestMapping(value = "cmnd/{cmnd}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+	@CrossOrigin()
     public List<KhachHang> GetKHByCMND(@PathVariable String cmnd) {
         List<KhachHang> listKH = KhachHangBUS.getKHByCMND(cmnd);
         return listKH;
