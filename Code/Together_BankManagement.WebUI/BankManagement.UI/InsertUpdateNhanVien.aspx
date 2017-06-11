@@ -32,9 +32,6 @@
                 <div>
                     <label>Tên Đăng Nhập:</label>
                 </div>
-                <div>
-                    <label>Mật Khẩu:</label>
-                </div>
             </div>
             <div class="filter-right">
                 <div id="divTextboxMaNV" runat="server" visible="False">
@@ -65,17 +62,13 @@
                 </div>
                 <div>
                     <asp:TextBox ID="stTenDangNhap" runat="server" CssClass="form-control" Width="316px" />
-                </div>
-                <div>
-                    <asp:TextBox ID="stMatKhau" runat="server" CssClass="form-control" Width="316px" />
-                </div>
+                </div>                
                 <div class="text-right">
                     <asp:Button ID="btnInsertOrUpdateNV" runat="server" Text="Thêm Nhân Viên" CssClass="btn btn-default" OnClick="btnInsertOrUpdate_Click" />
                     <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="btn btn-default" OnClientClick="return parent.closePopupModal();" />
                 </div>
             </div>
         </div>
-        </>
     </div>
     <script type="text/javascript">
         $('.input-daterange').datepicker({

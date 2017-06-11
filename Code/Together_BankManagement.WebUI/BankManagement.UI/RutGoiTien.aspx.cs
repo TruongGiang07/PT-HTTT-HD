@@ -35,7 +35,7 @@ namespace BankManagement.UI
                 soTien.Text = "Số Tiền Cần Rút: ";
                 btnRutGoi.Text = "Rút Tiền";
             }
-            if (_LoaiGiaoDich == 2)
+            else if (_LoaiGiaoDich == 2)
             {
                 maKhachHang.Text = "Mã Khách Hàng Gởi Tiền: ";
                 hoTen.Text = "Khách Hàng Gởi Tiền: ";
@@ -58,10 +58,11 @@ namespace BankManagement.UI
                     kh.soDuTaiKhoan = kh.soDuTaiKhoan - double.Parse(txtSoTien.Text.Trim());
                     UpdateKH(kh);
                     ClearData();
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Rút Tiền thành công.');", true);
                 }
                 else
                 {
-                    Console.WriteLine("So Tien Rut Lon Hon So Du Tai Khoan");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Số Tiền Rút Lớn Hơn Số Dư Tài Khoản!');", true);
                 }
             }
             else
@@ -73,6 +74,7 @@ namespace BankManagement.UI
                     kh.soDuTaiKhoan = kh.soDuTaiKhoan + double.Parse(txtSoTien.Text.Trim());
                     UpdateKH(kh);
                     ClearData();
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Gửi Tiền thành công.');", true);
                 }
             }
 
@@ -95,15 +97,8 @@ namespace BankManagement.UI
             //ct.ngayGiaoDich = DateTime.ParseExact(DateTime.Now.ToString().Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             ct.ngayGiaoDich = DateTime.Now;
             ct.soTienGiaoDich = double.Parse(txtSoTien.Text.Trim());
-            ct.maGDVien = 1;
-            if (_LoaiGiaoDich==1)
-            {
-                ct.maLoaiGD = 1;
-            }
-            else
-            {
-                ct.maLoaiGD = 2;
-            }
+            ct.maGDVien = SessionManager.CurrentUser.MaNV;
+            ct.LoaiGD = (byte)_LoaiGiaoDich;            
             return ct;
         }
         private List<khachHang> GetKH(int makh)
@@ -120,6 +115,6 @@ namespace BankManagement.UI
         public DateTime ngayGiaoDich { get; set; }
         public int maKHGiaoDich { get; set; }
         public int maGDVien { get; set; }
-        public int maLoaiGD { get; set; }
+        public Nullable<byte> LoaiGD { get; set; }        
     }
 }

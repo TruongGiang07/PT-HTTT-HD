@@ -76,5 +76,6 @@ namespace BankManagement.UI
         public string tenDangNhap { get; set; }
         public string matKhau { get; set; }
         public string tenChiNhanh { get; set; }
+        public int loaiNV { get; set; }
     }
 }

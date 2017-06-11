@@ -8,16 +8,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContainer" runat="server">
 
     <div class="row">
-        <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center" style="height: 235px;">
             <div class="filter-left">
                 <div>
                     <label>Mã Khách Hàng Chuyển:</label>
                 </div>
                 <div>
                     <label>CMND Khách Hàng Chuyển:</label>
-                </div>
-                <div>
-                    <label>Ngày Chuyển:</label>
                 </div>
                 <div>
                     <label>Số Tiền Chuyển:</label>
@@ -29,14 +26,10 @@
             <div class="filter-right">
                 <div>
                     <asp:TextBox ID="txtmakhchuyen" runat="server" CssClass="form-control" Width="316px" Enabled="False" />
+                    <asp:TextBox ID="txtMaKHChuyenThat" runat="server" CssClass="hide" Width="316px" />
                 </div>
                 <div>
                     <asp:TextBox ID="txtcmndchuyen" runat="server" CssClass="form-control" Width="316px" TextMode="Number" />
-                </div>
-                <div id="dtNgayChuyen">
-                    <div class="input-group input-daterange">
-                        <asp:TextBox ID="txtngaychuyen" runat="server" CssClass="form-control" Width="316px" />
-                    </div>
                 </div>
                 <div>
                     <asp:TextBox ID="txtsotienchuyen" runat="server" CssClass="form-control" Width="316px" TextMode="Number" />
@@ -59,6 +52,7 @@
             <div class="filter-right">
                 <div>
                     <asp:TextBox ID="txtmakhnhan" runat="server" CssClass="form-control" Width="316px" Enabled="False" />
+                    <asp:TextBox ID="txtMaKHNhanThat" runat="server" CssClass="hide" Width="316px" />
                 </div>
                 <div>
                     <asp:TextBox ID="txtcmndnhan" runat="server" CssClass="form-control" Width="316px" TextMode="Number" />
@@ -66,21 +60,15 @@
                 <div>
                     <asp:TextBox ID="txthoten" runat="server" CssClass="form-control" Width="316px" Enabled="false" />
                 </div>
+                <div class="text-right">
+                    <asp:Button ID="btnchuyentien" runat="server" Text="Chuyển Tiền" CssClass="btn btn-default" OnClick="btnchuyentien_Click" />
+                </div>
             </div>
-            <div class="text-right">
-                <asp:Button ID="btnchuyentien" runat="server" Text="Chuyển Tiền" CssClass="active" OnClick="btnchuyentien_Click" />
-            </div>
+
         </div>
     </div>
 
     <script type="text/javascript">
-
-        $('.input-daterange').datepicker({
-            autoclose: true,
-            endDate: "-1d",
-            format: "dd/mm/yyyy"
-        });
-
         $('[id$=txtcmndchuyen]').keypress(function (event) {
 
             var keycode = (event.keyCode ? event.keyCode : event.which);
@@ -94,12 +82,12 @@
                         dataType: 'json',
                         timeout: 30 * 1000
                     });
-                    alert(req);
                     req.done(function (data) {
                         //alert('Lấy Thông tin thành công');
                         //console.log(data);
                         $.each(data, function (index, kh) {
                             $("[id$=txtmakhchuyen]").val(kh.maKhachHang);
+                            $("[id$=txtMaKHChuyenThat]").val(kh.maKhachHang);
                         });
 
                     });
@@ -126,12 +114,12 @@
                         dataType: 'json',
                         timeout: 30 * 1000
                     });
-                    alert(req);
                     req.done(function (data) {
                         //alert('Lấy Thông tin thành công');
                         //console.log(data);
                         $.each(data, function (index, kh) {
                             $("[id$=txtmakhnhan]").val(kh.maKhachHang);
+                            $("[id$=txtMaKHNhanThat]").val(kh.maKhachHang);
                             $("[id$=txthoten]").val(kh.hoTen);
                         });
 

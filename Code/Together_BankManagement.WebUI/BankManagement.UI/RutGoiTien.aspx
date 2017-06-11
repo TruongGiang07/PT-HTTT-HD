@@ -11,16 +11,20 @@
         <div class="col-md-12 text-center">
             <div class="filter-left">
                 <div>
-                    <b><asp:Label ID="maKhachHang" runat="server" Enabled="True"></asp:Label></b>
+                    <b>
+                        <asp:Label ID="maKhachHang" runat="server" Enabled="True"></asp:Label></b>
                 </div>
                 <div>
-                   <b> <asp:Label ID="hoTen" runat="server"  Enabled="True"></asp:Label></b>
+                    <b>
+                        <asp:Label ID="hoTen" runat="server" Enabled="True"></asp:Label></b>
                 </div>
                 <div>
-                    <b><asp:Label ID="cMND" runat="server"  Enabled="True"></asp:Label></b>
+                    <b>
+                        <asp:Label ID="cMND" runat="server" Enabled="True"></asp:Label></b>
                 </div>
                 <div>
-                  <b> <asp:Label ID="soTien" runat="server"  Enabled="True"></asp:Label></b>
+                    <b>
+                        <asp:Label ID="soTien" runat="server" Enabled="True"></asp:Label></b>
                 </div>
             </div>
             <div class="filter-right">
@@ -37,24 +41,14 @@
                     <asp:TextBox ID="txtSoTien" runat="server" CssClass="form-control" Width="316px" TextMode="Number" />
                 </div>
                 <div class="text-right">
-                    <asp:Button ID="btnRutGoi" runat="server" Text="" CssClass="active" OnClick="btnRutGoi_Click" />
+                    <asp:Button ID="btnRutGoi" runat="server" Text="" CssClass="btn btn-default" OnClick="btnRutGoi_Click" />
                 </div>
             </div>
         </div>
+    </div>
 
-
-        </div>
-    
 
     <script type="text/javascript">
-
-        $('.input-daterange').datepicker({
-            autoclose: true,
-            endDate: "-1d",
-            format: "dd/mm/yyyy"
-        });
-
-      
 
         $('[id$=txtCMND]').keypress(function (event) {
 
@@ -69,7 +63,6 @@
                         dataType: 'json',
                         timeout: 30 * 1000
                     });
-                    alert(req);
                     req.done(function (data) {
                         //alert('Lấy Thông tin thành công');
                         //console.log(data);
@@ -90,7 +83,7 @@
             event.stopPropagation();
         });
 
-      
+
 
     </script>
 

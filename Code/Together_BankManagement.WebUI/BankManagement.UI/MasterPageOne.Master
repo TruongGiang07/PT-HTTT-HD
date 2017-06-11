@@ -17,35 +17,50 @@
 <body class="master-one">
     <form id="form1" runat="server">
         <header class="header">
-            <nav class="navbar nav-custom">
-                <div class="container-fluid">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Trang Chủ</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="#">Giao Dịch
+            <div class="row">
+                <div class="col-md-8">
+                    <nav class="navbar nav-custom">
+                        <div class="container-fluid">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">Trang Chủ</a></li>
+                                <asp:PlaceHolder ID="phdNhanVien" runat="server">
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#">Giao Dịch
                                 <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Rút Tiền</a></li>
-                                <li><a href="#">Chuyển Tiền</a></li>
-                                <li><a href="#">Gửi Tiền</a></li>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="RutGoiTien.aspx?loaiGD=1">Rút Tiền</a></li>
+                                            <li><a href="ChuyenTien.aspx">Chuyển Tiền</a></li>
+                                            <li><a href="RutGoiTien.aspx?loaiGD=2">Gửi Tiền</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="KhachHang.aspx">Khách Hàng</a>
+                                    </li>
+                                    <li><a href="SoTietKiem.aspx">Sổ Tiết Kiệm
+                                    </a>
+                                    </li>
+                                </asp:PlaceHolder>
+                                <asp:PlaceHolder ID="phdQuanLy" runat="server">
+                                    <li><a href="BaoCaoTKGiaoDich.aspx">Báo Cáo Giao Dịch
+                                    </a>
+                                    </li>
+                                    <li><a href="NhanVien.aspx">Quản lý Nhân Viên
+                                    </a>
+                                    </li>
+                                </asp:PlaceHolder>
                             </ul>
-                        </li>
-                        <li><a href="KhachHang.aspx">Khách Hàng</a>
-                        </li>
-                        <li><a href="#">Sổ Tiết Kiệm
-                        </a>
-                        </li>
-
-                        <li><a href="BaoCaoTKGiaoDich.aspx">Báo Cáo Giao Dịch
-                        </a>
-                        </li>
-                        <li><a href="NhanVien.aspx">Quản lý Nhân Viên
-                        </a>
-                        </li>
-                    </ul>
+                        </div>
+                    </nav>
                 </div>
-            </nav>
+                <div class="col-md-4">
+                    <div class="welcome">
+                        <label style="font-weight: 400; opacity: .65;">Xin Chào</label>
+                        <asp:Label ID="lblHoTen" runat="server" Text=""></asp:Label> |
+                        <asp:LinkButton ID="lbtnLogOff" runat="server" Text="Đăng Xuất" CssClass="link-log-off" OnClick="lbtnLogOff_Click"></asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+
         </header>
 
         <div class="container-custom">
@@ -71,11 +86,11 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title" style="color:blue">Modal Header</h4>
+                        <h4 class="modal-title" style="color: blue">Modal Header</h4>
                     </div>
                     <div class="modal-body">
                         <iframe id="frameContainer1" src="" frameborder="0" width="100%" scrolling="no"></iframe>
-                    </div>                    
+                    </div>
                 </div>
 
             </div>

@@ -11,6 +11,11 @@ parent.closePopupModal = function () {
     return false;
 }
 
+parent.reloadPage = function () {
+    location.reload();
+    return false;
+}
+
 parent.fitIframeSize = function () {
     var elementHeight = $("#frameContainer1").contents().find("#container-modal").height() + 10;
     $("#frameContainer1").css("height", elementHeight + "px");

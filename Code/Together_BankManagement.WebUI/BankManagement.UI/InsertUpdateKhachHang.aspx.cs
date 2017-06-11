@@ -70,7 +70,7 @@ namespace BankManagement.UI
         {
             string url = _IsUpdateMode ? "api/kh/upkh" : "api/kh/addkh";
             ServiceConnector.InsertOrUpdate<khachHang>(url, CreateKhachHang(), true);
-            ClearData();
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "reload", "parent.closePopupModal(); parent.reloadPage();", true);
         }
 
         private void BindRefData()
@@ -78,24 +78,7 @@ namespace BankManagement.UI
             cbxchinhanh.DataSource = ServiceConnector.GetDataFromServiceByGet<ChiNhanh>("api/chinhanh/all", true);
             cbxchinhanh.DataBind();
         }
-
-        private void ClearData()
-        {
-            txtmakh.Text = null;
-            txthoten.Text = null;
-            txtsocmnd.Text = null;
-            txtngaysinh.Text = null;
-            txtdienthoai.Text = null;
-            txtemail.Text = null;
-            txtdcthuongtru.Text = null;
-            txtdclienlac.Text = null;
-            cbxgioitinh.SelectedIndex = 0;
-            cbxtinhtranghonnhan.SelectedIndex = 0;
-            txtngaylap.Text = null;
-            cbxtinhtranghoatdong.SelectedIndex = 0;
-            cbxchinhanh.SelectedIndex = 0;
-        }
-
+        
         private khachHang CreateKhachHang()
         {
             var kh = new khachHang();

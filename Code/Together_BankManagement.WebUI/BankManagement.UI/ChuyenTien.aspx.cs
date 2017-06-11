@@ -18,22 +18,23 @@ namespace BankManagement.UI
 
         protected void btnchuyentien_Click(object sender, EventArgs e)
         {
-            List<khachHang> lskhchuyen = GetKH(txtmakhchuyen.Text.Trim());
+            List<khachHang> lskhchuyen = GetKH(txtMaKHChuyenThat.Text.Trim());
             khachHang khchuyen = lskhchuyen[0];
             if (khchuyen.soDuTaiKhoan > double.Parse(txtsotienchuyen.Text.Trim()))
             {
                 ServiceConnector.GetDataFromServiceByPost<chuyenTien>("api/gdct/add", CreateChuyenTien(), false);
                 khchuyen.soDuTaiKhoan = khchuyen.soDuTaiKhoan - double.Parse(txtsotienchuyen.Text.Trim());
                 UpdateKH(khchuyen);
-                List<khachHang> lskhnhan = GetKH(txtmakhnhan.Text.Trim());
+                List<khachHang> lskhnhan = GetKH(txtMaKHNhanThat.Text.Trim());
                 khachHang khnhan = lskhnhan[0];
                 khnhan.soDuTaiKhoan = khnhan.soDuTaiKhoan + double.Parse(txtsotienchuyen.Text.Trim());
                 UpdateKH(khnhan);
                 ClearData();
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Chuyển Tiền thành công.');", true);
             }
             else
             {
-                Console.WriteLine("So Tien Chuyen Lon Hon So Du Tai Khoan");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Số Tiền Chuyển Lớn Hơn Số Dư Tài Khoản!');", true);
             }
         }
 
@@ -50,23 +51,22 @@ namespace BankManagement.UI
         private chuyenTien CreateChuyenTien()
         {
             var ct = new chuyenTien();
-            ct.maKHChuyen = int.Parse(txtmakhchuyen.Text.Trim());
-            ct.ngayChuyen = DateTime.ParseExact(txtngaychuyen.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            ct.maKHChuyen = int.Parse(txtMaKHChuyenThat.Text.Trim());
+            ct.ngayChuyen = DateTime.Now;
             ct.soTienChuyen = double.Parse(txtsotienchuyen.Text.Trim());
             ct.noiDung = txtnoidung.Text.Trim();
-            ct.maKHNhan = int.Parse(txtmakhnhan.Text.Trim());
-            ct.maGDVien = 1;
+            ct.maKHNhan = int.Parse(txtMaKHNhanThat.Text.Trim());
+            ct.maGDVien = SessionManager.CurrentUser.MaNV;
             return ct;
         }
 
         private void ClearData()
         {
-            txtmakhchuyen.Text = null;
+            txtMaKHChuyenThat.Text = null;
             txtcmndchuyen.Text = null;
-            txtngaychuyen.Text = null;
             txtsotienchuyen.Text = null;
             txtnoidung.Text = null;
-            txtmakhnhan.Text = null;
+            txtMaKHNhanThat.Text = null;
             txtcmndnhan.Text = null;
             txthoten.Text = null;
         }

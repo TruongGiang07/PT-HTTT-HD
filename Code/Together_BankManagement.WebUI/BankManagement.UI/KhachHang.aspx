@@ -34,6 +34,9 @@
                 AlternatingRowStyle-BackColor="White" OnPageIndexChanging="gvKhachHang_PageIndexChanging" OnRowDataBound="gvKhachHang_RowDataBound">
                 <PagerSettings Mode="Numeric" />  
                 <PagerStyle CssClass="pagination-ys"/>
+                <EmptyDataTemplate>
+                    <label>Không có dữ liệu để hiển thị</label>
+                </EmptyDataTemplate>
                 <Columns>
                     <asp:BoundField DataField="maKhachHang" HeaderText="Mã KH" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
                     <asp:BoundField DataField="hoTen" HeaderText="Họ Tên" />

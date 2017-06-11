@@ -33,21 +33,23 @@
     <div class="row">
         <div class="col-md-12">
             <h3>Danh Sách Nhân Viên</h3>
-            <asp:GridView ID="gvNhanVien" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="5"
+            <asp:GridView ID="gvNhanVien" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="6"
                 Width="100%" CssClass="table table-bordered" RowStyle-CssClass="grid-row"
                 AlternatingRowStyle-BackColor="White" OnPageIndexChanging="gvNhanVien_PageIndexChanging" OnRowDataBound="gvNhanVien_RowDataBound">
                 <PagerSettings Mode="Numeric" />
                 <PagerStyle CssClass="pagination-ys" />
+                <EmptyDataTemplate>
+                    <label>Không có dữ liệu để hiển thị</label>
+                </EmptyDataTemplate>
                 <Columns>
                     <asp:BoundField DataField="maNhanVien" HeaderText="Mã NV" HeaderStyle-Wrap="false" ItemStyle-HorizontalAlign="Center" />
                     <asp:BoundField DataField="hoTen" HeaderText="Họ Tên" />
-                    <asp:BoundField DataField="ngaySinh" DataFormatString="{0:dd/MM/yyyy}" HeaderText="Ngày Sinh" />
+                    <asp:BoundField DataField="ngaySinh" DataFormatString="{0:dd/MM/yyyy}" HeaderText="Ngày Sinh" ItemStyle-HorizontalAlign="Center" />
                     <asp:BoundField DataField="soDienThoai" HeaderText="Điện Thoại" />
                     <asp:BoundField DataField="diaChi" HeaderText="Địa Chỉ Thường Trú" />
                     <asp:BoundField DataField="gioiTinh" HeaderText="Giới Tính" />
                     <asp:BoundField DataField="tenChiNhanh" HeaderText="Chi Nhánh" />
                     <asp:BoundField DataField="tenDangNhap" HeaderText="Tên Đăng Nhập" />
-                    <asp:BoundField DataField="matKhau" HeaderText="Mật Khẩu" />
                 </Columns>
             </asp:GridView>
 

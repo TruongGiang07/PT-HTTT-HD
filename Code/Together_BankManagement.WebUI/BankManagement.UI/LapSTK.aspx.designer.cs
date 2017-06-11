@@ -10,69 +10,87 @@
 namespace BankManagement.UI {
     
     
-    public partial class MasterPageOne {
+    public partial class LapSTK {
         
         /// <summary>
-        /// head control.
+        /// txtSoTienGui control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.TextBox txtSoTienGui;
         
         /// <summary>
-        /// form1 control.
+        /// txtKyHan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox txtKyHan;
         
         /// <summary>
-        /// phdNhanVien control.
+        /// txtLaiSuat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phdNhanVien;
+        protected global::System.Web.UI.WebControls.TextBox txtLaiSuat;
         
         /// <summary>
-        /// phdQuanLy control.
+        /// txtCMND control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phdQuanLy;
+        protected global::System.Web.UI.WebControls.TextBox txtCMND;
         
         /// <summary>
-        /// lblHoTen control.
+        /// txtMaKHGui control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHoTen;
+        protected global::System.Web.UI.WebControls.TextBox txtMaKHGui;
         
         /// <summary>
-        /// lbtnLogOff control.
+        /// txtMaKHshow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnLogOff;
+        protected global::System.Web.UI.WebControls.TextBox txtMaKHshow;
         
         /// <summary>
-        /// BodyContainer control.
+        /// txtHoten control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder BodyContainer;
+        protected global::System.Web.UI.WebControls.TextBox txtHoten;
+        
+        /// <summary>
+        /// btnTaoSTK control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTaoSTK;
+        
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }

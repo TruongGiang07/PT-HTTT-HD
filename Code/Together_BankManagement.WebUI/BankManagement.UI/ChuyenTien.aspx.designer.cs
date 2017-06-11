@@ -22,6 +22,15 @@ namespace BankManagement.UI {
         protected global::System.Web.UI.WebControls.TextBox txtmakhchuyen;
         
         /// <summary>
+        /// txtMaKHChuyenThat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMaKHChuyenThat;
+        
+        /// <summary>
         /// txtcmndchuyen control.
         /// </summary>
         /// <remarks>
@@ -29,15 +38,6 @@ namespace BankManagement.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcmndchuyen;
-        
-        /// <summary>
-        /// txtngaychuyen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtngaychuyen;
         
         /// <summary>
         /// txtsotienchuyen control.
@@ -65,6 +65,15 @@ namespace BankManagement.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtmakhnhan;
+        
+        /// <summary>
+        /// txtMaKHNhanThat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMaKHNhanThat;
         
         /// <summary>
         /// txtcmndnhan control.

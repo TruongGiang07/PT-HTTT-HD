@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Globalization;
+using System.Text;
 namespace BankManagement.UI
 {
     public partial class InsertUpdateNhanVien : System.Web.UI.Page
@@ -35,7 +36,21 @@ namespace BankManagement.UI
             }
         }
 
- 
+        private string _CurrentPassword
+        {
+            get
+            {
+                if (ViewState["CurPassword"] == null)
+                {
+                    ViewState["CurPassword"] = "";
+                }
+                return (string)ViewState["CurPassword"];
+            }
+            set
+            {
+                ViewState["CurPassword"] = value;
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -55,7 +70,7 @@ namespace BankManagement.UI
         {
             string url = _IsUpdateMode ? "api/nv/up" : "api/nv/add";
             ServiceConnector.InsertOrUpdate<nhanVien>(url, CreateNhanVien(), true);
-            ClearData();
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "reload", "parent.closePopupModal(); parent.reloadPage();", true);
         }
 
         private void BindRefData()
@@ -63,20 +78,7 @@ namespace BankManagement.UI
             cbxChiNhanh.DataSource = ServiceConnector.GetDataFromServiceByGet<ChiNhanh>("api/chinhanh/all", true);
             cbxChiNhanh.DataBind();
         }
-
-        private void ClearData()
-        {
-            txtMaNV.Text = null;
-            txtHoTen.Text = null;
-            dtNgaySinh.Text = null;
-            stDienThoai.Text = null;
-            stDCThuongTru.Text = null;
-            stTenDangNhap.Text = null;
-            stMatKhau.Text = null;
-            cbxgioitinh.SelectedIndex = 0;
-            cbxChiNhanh.SelectedIndex = 0;
-        }
-
+        
         private nhanVien CreateNhanVien()
         {
             var nv = new nhanVien();
@@ -89,13 +91,14 @@ namespace BankManagement.UI
             nv.soDienThoai = stDienThoai.Text.Trim();
             nv.diaChi = stDCThuongTru.Text.Trim();
             nv.tenDangNhap = stTenDangNhap.Text.Trim();
-            nv.matKhau = stMatKhau.Text.Trim();
+            nv.matKhau = _IsUpdateMode ? _CurrentPassword : CreatePassword(10);
             if (cbxgioitinh.SelectedValue == "Nam")
                 nv.gioiTinh= true;
             else
                 nv.gioiTinh = false;
           
             nv.maCNLamViec = int.Parse(cbxChiNhanh.SelectedValue);
+            nv.loaiNV = 2;
             return nv;
         }
 
@@ -112,7 +115,7 @@ namespace BankManagement.UI
                 stDienThoai.Text = nv[0].soDienThoai.ToString();
                 stDCThuongTru.Text = nv[0].diaChi.ToString();
                 stTenDangNhap.Text = nv[0].tenDangNhap.ToString();
-                stMatKhau.Text = nv[0].matKhau.ToString();
+                _CurrentPassword = nv[0].matKhau;
                 if (nv[0].gioiTinh == true)
                     cbxgioitinh.SelectedIndex = 0;
                 else
@@ -121,5 +124,18 @@ namespace BankManagement.UI
                 divLabelMaNV.Visible = divTextboxMaNV.Visible = true;
             }
         }
+
+        private string CreatePassword(int length)
+        {
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+            return res.ToString();
+        }
+
     }
  }
