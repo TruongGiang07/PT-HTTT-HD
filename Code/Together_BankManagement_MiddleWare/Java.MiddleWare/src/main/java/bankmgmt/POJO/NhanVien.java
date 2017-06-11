@@ -16,6 +16,15 @@ public class NhanVien {
     private String soDienThoai;
     private int maCNLamViec;
     private String tenChiNhanh;
+    private int loaiNV;
+
+    public int getLoaiNV() {
+        return loaiNV;
+    }
+
+    public void setLoaiNV(int loaiNV) {
+        this.loaiNV = loaiNV;
+    }
 
     public void setGioiTinh(boolean gioiTinh) {
         this.gioiTinh = gioiTinh;

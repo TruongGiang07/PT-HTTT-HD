@@ -51,36 +51,30 @@ public class NhanVienDAL {
         }
         return true;
     }
-    public static boolean login(LoginFilter filter)
+    public static List<Object[]> login(LoginFilter filter)
     {
         List<Object[]> ds = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String hql =  "select nv1 " +
-                    " from NhanVien nv1 " +
-                    " where '%"+filter.getTenDangNhap()+"%' = nv1.tenDangNhap and '%"+filter.getMatKhau()+"%' = nv1.matKhau ";
+            String hql =  "select nv.maNhanVien, nv.tenDangNhap, nv.matKhau, nv.hoTen, nv.loaiNV " +
+                    " from NhanVien nv " +
+                    " where nv.tenDangNhap = '" + filter.getTenDN() + "' AND nv.matKhau = '" + filter.getMatKhau() + "'";
             Query query = session.createQuery(hql);
             ds = query.list();
-            if(ds.size() > 0) {
-                return true;
-            }else {
-                return false;
-            }
         } catch (Exception e) {
-            // TODO: handle exception
             System.err.println(e);
-            return false;
         }
         finally {
             session.close();
         }
+        return ds;
     }
     public static List<Object[]> getNVByID( int manv)
     {
         List<Object[]> ds = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String hql = "select nv.maNhanVien, nv.hoTen, nv.ngaySinh, nv.soDienThoai, nv.diaChi, nv.gioiTinh, cn.tenChiNhanh, nv.tenDangNhap, nv.matKhau " +
+            String hql = "select nv.maNhanVien, nv.hoTen, nv.ngaySinh, nv.soDienThoai, nv.diaChi, nv.gioiTinh, cn.tenChiNhanh, nv.tenDangNhap, nv.matKhau, nv.maCNLamViec " +
                     " from NhanVien nv, ChiNhanh cn" +
                     " where nv.maCNLamViec = cn.maChiNhanh and nv.maNhanVien = " + manv;
             Query query = session.createQuery(hql);

@@ -33,6 +33,9 @@
         <property name="maCNLamViec" type="integer">
             <column name="MaCNLamViec"/>
         </property>
+        <property name="loaiNV" type="integer">
+            <column name="LoaiNV"/>
+        </property>
     </class>
 
 </hibernate-mapping>

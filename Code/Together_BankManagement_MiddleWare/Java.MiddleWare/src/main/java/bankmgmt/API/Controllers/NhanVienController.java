@@ -4,6 +4,7 @@ package bankmgmt.API.Controllers;
 import bankmgmt.BusinessLayer.NhanVienBUS;
 import bankmgmt.POJO.NhanVien;
 import bankmgmt.POJO.LoginFilter;
+import bankmgmt.POJO.UserLogin;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,12 +25,8 @@ public class NhanVienController {
         return listNV;
     }
     @RequestMapping(value = "dangnhap", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<LoginFilter> DangNhapNV(@RequestBody LoginFilter nv) {
-        if (nv != null && NhanVienBUS.login(nv)) {
-            return new ResponseEntity<LoginFilter>(nv, HttpStatus.CREATED);
-        } else {
-            return new ResponseEntity<LoginFilter>(nv, HttpStatus.NOT_MODIFIED);
-        }
+    public List<UserLogin> DangNhapNV(@RequestBody LoginFilter nv) {
+        return NhanVienBUS.login(nv);
     }
     @RequestMapping(value = "id/{manv}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<NhanVien> GetNVById(@PathVariable int manv) {

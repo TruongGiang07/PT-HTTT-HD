@@ -19,7 +19,7 @@ namespace BankMgmt.MW.BusinessLayer
 
         public List<SoTietKiem> GetAllSoTietKiem()
         {
-            return _soTietKiemRepo.GetAll().ToList();
+            return _soTietKiemRepo.GetAll(x => x.KhachHang).Where(i => i.TinhTrang == 1).ToList();
         }
 
         public SoTietKiem GetSoTietKiem(int stkId)

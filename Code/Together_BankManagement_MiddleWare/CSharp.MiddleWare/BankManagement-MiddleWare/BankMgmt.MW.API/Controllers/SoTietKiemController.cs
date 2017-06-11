@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Linq;
 
 namespace BankMgmt.MW.API.Controllers
 {
@@ -12,7 +13,19 @@ namespace BankMgmt.MW.API.Controllers
         public IHttpActionResult GetAll()
         {
             var stkBus = new BankMgmt.MW.BusinessLayer.SoTietKiemBUS();
-            return Ok(stkBus.GetAllSoTietKiem());
+
+            var listSTK = stkBus.GetAllSoTietKiem().Select(item => new
+            {
+                item.MaSoTietKiem,
+                item.SoTienGui,
+                item.NgayGui,
+                item.NgayDaoHan,
+                item.KyHan,
+                item.LaiSuat,
+                item.KhachHang.HoTen
+            }).ToList();
+
+            return Ok(listSTK);
         }
 
         [HttpGet]
@@ -32,13 +45,14 @@ namespace BankMgmt.MW.API.Controllers
             return Request.CreateResponse(HttpStatusCode.Created, stk);
         }
 
-        [HttpDelete]
+        [HttpPost]
         [Route("api/stk/remove/{stkId}")]
         public HttpResponseMessage RemoveSoTietKiem(int stkId)
         {
             var stkBus = new BankMgmt.MW.BusinessLayer.SoTietKiemBUS();
             SoTietKiem stk = stkBus.GetSoTietKiem(stkId);
-            stkBus.RemoveSoTietKiem(stk);
+            stk.TinhTrang = 0;
+            stkBus.UpdateSoTietKiem(stk);
             return Request.CreateResponse(HttpStatusCode.Created, stkId);
         }
     }

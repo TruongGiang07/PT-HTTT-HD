@@ -9,20 +9,19 @@ public class LoginFilter {
     private String tenDN;
     private String matKhau;
 
-
-    public String getTenDangNhap() {
+    public String getTenDN() {
         return tenDN;
     }
 
-    public void setFromDate(String username) {
-        this.tenDN = username;
+    public void setTenDN(String tenDN) {
+        this.tenDN = tenDN;
     }
 
     public String getMatKhau() {
         return matKhau;
     }
 
-    public void setToDate(String password) {
-        this.matKhau = password;
+    public void setMatKhau(String matKhau) {
+        this.matKhau = matKhau;
     }
 }
