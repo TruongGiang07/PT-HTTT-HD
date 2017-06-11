@@ -1,6 +1,7 @@
 package bankmgmt.DataAccessLayer;
 
 
+import bankmgmt.POJO.LoginFilter;
 import bankmgmt.POJO.NhanVien;
 import bankmgmt.Utilities.HibernateUtil;
 import org.hibernate.HibernateException;
@@ -49,6 +50,30 @@ public class NhanVienDAL {
             session.close();
         }
         return true;
+    }
+    public static boolean login(LoginFilter filter)
+    {
+        List<Object[]> ds = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            String hql =  "select nv1 " +
+                    " from NhanVien nv1 " +
+                    " where '%"+filter.getTenDangNhap()+"%' = nv1.tenDangNhap and '%"+filter.getMatKhau()+"%' = nv1.matKhau ";
+            Query query = session.createQuery(hql);
+            ds = query.list();
+            if(ds.size() > 0) {
+                return true;
+            }else {
+                return false;
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.err.println(e);
+            return false;
+        }
+        finally {
+            session.close();
+        }
     }
     public static List<Object[]> getNVByID( int manv)
     {

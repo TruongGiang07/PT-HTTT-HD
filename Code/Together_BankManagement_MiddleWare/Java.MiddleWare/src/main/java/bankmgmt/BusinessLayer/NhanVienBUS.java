@@ -3,6 +3,7 @@ package bankmgmt.BusinessLayer;
 
 import bankmgmt.DataAccessLayer.NhanVienDAL;
 import bankmgmt.DataAccessLayer.TongKetGiaoDichDAL;
+import bankmgmt.POJO.LoginFilter;
 import bankmgmt.POJO.NhanVien;
 import bankmgmt.POJO.TKGDViewModel;
 
@@ -35,6 +36,9 @@ public class NhanVienBUS {
     }
     public static boolean add(NhanVien nv) {
         return NhanVienDAL.add(nv);
+    }
+    public static boolean login(LoginFilter nv) {
+        return NhanVienDAL.login(nv);
     }
     public static boolean up(NhanVien nv) {
         return NhanVienDAL.up(nv);
