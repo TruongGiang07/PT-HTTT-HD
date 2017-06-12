@@ -11,20 +11,20 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{42E8EFF7-63C9-4FB2-999A-D728DCD37439}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{0216B717-8F5B-4A2D-9617-BE13FE5A2D88}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Import GiaoDich"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{67D530E8-1531-498B-A883-5A68C7342028}"
+      DTS:DTSID="{8AFA3342-DE69-4631-894B-9AC1470CED1C}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="Import GiaoDich"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -32,12 +32,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Flat File Source"
+              refId="Package\Import GiaoDich\File GiaoDich"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1033"
-              name="Flat File Source"
+              name="File GiaoDich"
               usesDispositions="true"
               version="1">
               <properties>
@@ -52,25 +52,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="{EE7397FF-DD20-418C-80F6-0E82BC86E09B}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Flat File Connection Manager]"
+                  refId="Package\Import GiaoDich\File GiaoDich.Connections[FlatFileConnection]"
+                  connectionManagerID="{35BA5FAC-9DBD-4F1D-A4D4-C5827672DB90}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[GIaodich]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
+                  refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[maLoaiGD]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[maLoaiGD]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[maLoaiGD]"
+                      externalMetadataColumnId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].ExternalColumns[maLoaiGD]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[maLoaiGD]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[maLoaiGD]"
                       name="maLoaiGD"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -85,281 +85,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hoTen]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[hoTen]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hoTen]"
-                      name="hoTen"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[soDu]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[soDu]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[soDu]"
-                      name="soDu"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ngaySinh]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ngaySinh]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ngaySinh]"
-                      name="ngaySinh"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[gioiTinh]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gioiTinh]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[gioiTinh]"
-                      name="gioiTinh"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[diaChi]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[diaChi]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[diaChi]"
-                      name="diaChi"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[diaChiLienLac]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[diaChiLienLac]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[diaChiLienLac]"
-                      name="diaChiLienLac"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[soCMND]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[soCMND]"
-                      length="20"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[soCMND]"
-                      name="soCMND"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[dienThoai]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dienThoai]"
-                      length="20"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[dienThoai]"
-                      name="dienThoai"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[email]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[email]"
-                      name="email"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[tinhTrangHonNhan]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tinhTrangHonNhan]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[tinhTrangHonNhan]"
-                      name="tinhTrangHonNhan"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ngayLap]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ngayLap]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ngayLap]"
-                      name="ngayLap"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[tinhTrangHoatDong]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tinhTrangHoatDong]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[tinhTrangHoatDong]"
-                      name="tinhTrangHoatDong"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[maCNDangKy]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[maCNDangKy]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[maCNDangKy]"
-                      name="maCNDangKy"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[soTienGD]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[soTienGD]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[soTienGD]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[soTienGD]"
+                      externalMetadataColumnId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].ExternalColumns[soTienGD]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[soTienGD]"
                       name="soTienGD"
                       precision="18"
                       truncationRowDisposition="FailComponent">
@@ -375,12 +106,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ngayGD]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[ngayGD]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ngayGD]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ngayGD]"
+                      externalMetadataColumnId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].ExternalColumns[ngayGD]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[ngayGD]"
                       name="ngayGD"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -395,12 +126,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[maKHGD]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[maKHGD]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[maKHGD]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[maKHGD]"
+                      externalMetadataColumnId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].ExternalColumns[maKHGD]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[maKHGD]"
                       name="maKHGD"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -415,54 +146,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[maGDV]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[maGDV]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[maGDV]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[maGDV]"
+                      externalMetadataColumnId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].ExternalColumns[maGDV]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[maGDV]"
                       name="maGDV"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[noiDung]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[noiDung]"
-                      length="100"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[noiDung]"
-                      name="noiDung"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[maKHNhan]"
-                      dataType="i1"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[maKHNhan]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[maKHNhan]"
-                      name="maKHNhan"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -479,122 +169,52 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[maLoaiGD]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].ExternalColumns[maLoaiGD]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="maLoaiGD" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[hoTen]"
-                      dataType="wstr"
-                      length="50"
-                      name="hoTen" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[soDu]"
-                      dataType="decimal"
-                      name="soDu" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ngaySinh]"
-                      dataType="dbDate"
-                      name="ngaySinh" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gioiTinh]"
-                      dataType="bool"
-                      name="gioiTinh" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[diaChi]"
-                      dataType="wstr"
-                      length="50"
-                      name="diaChi" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[diaChiLienLac]"
-                      dataType="wstr"
-                      length="50"
-                      name="diaChiLienLac" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[soCMND]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="soCMND" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dienThoai]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="dienThoai" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="email" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tinhTrangHonNhan]"
-                      dataType="bool"
-                      name="tinhTrangHonNhan" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ngayLap]"
-                      dataType="dbTimeStamp"
-                      name="ngayLap" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tinhTrangHoatDong]"
-                      dataType="bool"
-                      name="tinhTrangHoatDong" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[maCNDangKy]"
-                      dataType="i4"
-                      name="maCNDangKy" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[soTienGD]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].ExternalColumns[soTienGD]"
                       dataType="numeric"
                       name="soTienGD"
                       precision="18" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ngayGD]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].ExternalColumns[ngayGD]"
                       dataType="dbTimeStamp"
                       name="ngayGD" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[maKHGD]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].ExternalColumns[maKHGD]"
                       dataType="i4"
                       name="maKHGD" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[maGDV]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].ExternalColumns[maGDV]"
                       dataType="i4"
                       name="maGDV" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[noiDung]"
-                      dataType="wstr"
-                      length="100"
-                      name="noiDung" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[maKHNhan]"
-                      dataType="i1"
-                      name="maKHNhan" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -603,11 +223,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
+              refId="Package\Import GiaoDich\Table GiaoDich"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination"
+              name="Table GiaoDich"
               usesDispositions="true"
               version="4">
               <properties>
@@ -660,7 +280,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Import GiaoDich\Table GiaoDich.Connections[OleDbConnection]"
                   connectionManagerID="{73AC0D61-4144-410C-987E-E09E82B9F8F5}:external"
                   connectionManagerRefId="Project.ConnectionManagers[localhost.QL_NGAN_HANG]"
                   description="The OLE DB runtime connection used to access the database."
@@ -668,63 +288,71 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[soTienGD]"
+                      refId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].Columns[soTienGD]"
                       cachedDataType="numeric"
                       cachedName="soTienGD"
                       cachedPrecision="18"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SoTienGiaoDich]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[soTienGD]" />
+                      externalMetadataColumnId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].ExternalColumns[SoTienGiaoDich]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[soTienGD]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ngayGD]"
+                      refId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].Columns[ngayGD]"
                       cachedDataType="dbTimeStamp"
                       cachedName="ngayGD"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NgayGiaoDich]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ngayGD]" />
+                      externalMetadataColumnId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].ExternalColumns[NgayGiaoDich]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[ngayGD]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[maKHGD]"
+                      refId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].Columns[maKHGD]"
                       cachedDataType="i4"
                       cachedName="maKHGD"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaKHGiaoDich]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[maKHGD]" />
+                      externalMetadataColumnId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].ExternalColumns[MaKHGiaoDich]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[maKHGD]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[maGDV]"
+                      refId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].Columns[maGDV]"
                       cachedDataType="i4"
                       cachedName="maGDV"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaGDVien]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[maGDV]" />
+                      externalMetadataColumnId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].ExternalColumns[MaGDVien]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[maGDV]" />
+                    <inputColumn
+                      refId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].Columns[maLoaiGD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="maLoaiGD"
+                      externalMetadataColumnId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].ExternalColumns[LoaiGD]"
+                      lineageId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output].Columns[maLoaiGD]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaGiaoDich]"
+                      refId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].ExternalColumns[MaGiaoDich]"
                       dataType="i4"
                       name="MaGiaoDich" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SoTienGiaoDich]"
+                      refId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].ExternalColumns[SoTienGiaoDich]"
                       dataType="numeric"
                       name="SoTienGiaoDich"
                       precision="18" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NgayGiaoDich]"
+                      refId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].ExternalColumns[NgayGiaoDich]"
                       dataType="dbTimeStamp"
                       name="NgayGiaoDich" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaKHGiaoDich]"
+                      refId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].ExternalColumns[MaKHGiaoDich]"
                       dataType="i4"
                       name="MaKHGiaoDich" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaGDVien]"
+                      refId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].ExternalColumns[MaGDVien]"
                       dataType="i4"
                       name="MaGDVien" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoaiGD]"
+                      refId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input].ExternalColumns[LoaiGD]"
                       dataType="ui1"
                       name="LoaiGD" />
                   </externalMetadataColumns>
@@ -732,22 +360,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Import GiaoDich\Table GiaoDich.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Import GiaoDich\Table GiaoDich.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import GiaoDich\Table GiaoDich.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import GiaoDich\Table GiaoDich.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import GiaoDich\Table GiaoDich.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -758,10 +386,1095 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Import GiaoDich.Paths[Flat File Source Output]"
+              endId="Package\Import GiaoDich\Table GiaoDich.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Import GiaoDich\File GiaoDich.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import GiaoDichChuyenTien"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{77E289B8-A049-4A4A-AFE0-2ADABFA41B0E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import GiaoDichChuyenTien"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="File GiaoDichChuyenTien"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Connections[FlatFileConnection]"
+                  connectionManagerID="{E48A9D6A-4144-45E3-88ED-1C2D63EDAB7A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[GDCT]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[soTienGD]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].ExternalColumns[soTienGD]"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[soTienGD]"
+                      name="soTienGD"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[ngayGD]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].ExternalColumns[ngayGD]"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[ngayGD]"
+                      name="ngayGD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[noiDung]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].ExternalColumns[noiDung]"
+                      length="50"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[noiDung]"
+                      name="noiDung"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[maKHGD]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].ExternalColumns[maKHGD]"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[maKHGD]"
+                      name="maKHGD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[maKHNhan]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].ExternalColumns[maKHNhan]"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[maKHNhan]"
+                      name="maKHNhan"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[maGDV]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].ExternalColumns[maGDV]"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[maGDV]"
+                      name="maGDV"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].ExternalColumns[soTienGD]"
+                      dataType="numeric"
+                      name="soTienGD"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].ExternalColumns[ngayGD]"
+                      dataType="dbDate"
+                      name="ngayGD" />
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].ExternalColumns[noiDung]"
+                      dataType="wstr"
+                      length="50"
+                      name="noiDung" />
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].ExternalColumns[maKHGD]"
+                      dataType="i4"
+                      name="maKHGD" />
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].ExternalColumns[maKHNhan]"
+                      dataType="i1"
+                      name="maKHNhan" />
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].ExternalColumns[maGDV]"
+                      dataType="i4"
+                      name="maGDV" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Table GiaoDichChuyenTien"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[GiaoDichChuyenTien]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Connections[OleDbConnection]"
+                  connectionManagerID="{73AC0D61-4144-410C-987E-E09E82B9F8F5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.QL_NGAN_HANG]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].Columns[noiDung]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="noiDung"
+                      externalMetadataColumnId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[NoiDung]"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[noiDung]" />
+                    <inputColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].Columns[maKHNhan]"
+                      cachedDataType="i1"
+                      cachedName="maKHNhan"
+                      externalMetadataColumnId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[MaKHNhan]"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[maKHNhan]" />
+                    <inputColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].Columns[soTienGD]"
+                      cachedDataType="numeric"
+                      cachedName="soTienGD"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[SoTienChuyen]"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[soTienGD]" />
+                    <inputColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].Columns[ngayGD]"
+                      cachedDataType="dbDate"
+                      cachedName="ngayGD"
+                      externalMetadataColumnId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[NgayChuyen]"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[ngayGD]" />
+                    <inputColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].Columns[maKHGD]"
+                      cachedDataType="i4"
+                      cachedName="maKHGD"
+                      externalMetadataColumnId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[MaKHChuyen]"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[maKHGD]" />
+                    <inputColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].Columns[maGDV]"
+                      cachedDataType="i4"
+                      cachedName="maGDV"
+                      externalMetadataColumnId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[MaGDVien]"
+                      lineageId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output].Columns[maGDV]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[MaGD]"
+                      dataType="i4"
+                      name="MaGD" />
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[SoTienChuyen]"
+                      dataType="numeric"
+                      name="SoTienChuyen"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[NgayChuyen]"
+                      dataType="dbDate"
+                      name="NgayChuyen" />
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[NoiDung]"
+                      dataType="wstr"
+                      length="100"
+                      name="NoiDung" />
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[MaKHChuyen]"
+                      dataType="i4"
+                      name="MaKHChuyen" />
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[MaKHNhan]"
+                      dataType="i4"
+                      name="MaKHNhan" />
+                    <externalMetadataColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input].ExternalColumns[MaGDVien]"
+                      dataType="i4"
+                      name="MaGDVien" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import GiaoDichChuyenTien.Paths[Flat File Source Output]"
+              endId="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import KhachHang"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{67D530E8-1531-498B-A883-5A68C7342028}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import KhachHang"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import KhachHang\File KhachHang"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="File KhachHang"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import KhachHang\File KhachHang.Connections[FlatFileConnection]"
+                  connectionManagerID="{D9F61EC3-3E11-4568-9F6C-2A6FFEB54AFC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[KhachHang]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[hoTen]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[hoTen]"
+                      length="50"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[hoTen]"
+                      name="hoTen"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[soDu]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[soDu]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[soDu]"
+                      name="soDu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[ngaySinh]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[ngaySinh]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[ngaySinh]"
+                      name="ngaySinh"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[gioiTinh]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[gioiTinh]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[gioiTinh]"
+                      name="gioiTinh"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[diaChiThuongTru]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[diaChiThuongTru]"
+                      length="50"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[diaChiThuongTru]"
+                      name="diaChiThuongTru"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[diaChiLienLac]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[diaChiLienLac]"
+                      length="50"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[diaChiLienLac]"
+                      name="diaChiLienLac"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[soCMND]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[soCMND]"
+                      length="20"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[soCMND]"
+                      name="soCMND"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[dienThoai]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[dienThoai]"
+                      length="20"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[dienThoai]"
+                      name="dienThoai"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[email]"
+                      length="50"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[tinhTrangHonNhan]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[tinhTrangHonNhan]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[tinhTrangHonNhan]"
+                      name="tinhTrangHonNhan"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[ngayLap]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[ngayLap]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[ngayLap]"
+                      name="ngayLap"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[tinhTrangHoatDong]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[tinhTrangHoatDong]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[tinhTrangHoatDong]"
+                      name="tinhTrangHoatDong"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[maCNDangKy]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[maCNDangKy]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[maCNDangKy]"
+                      name="maCNDangKy"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[hoTen]"
+                      dataType="wstr"
+                      length="50"
+                      name="hoTen" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[soDu]"
+                      dataType="decimal"
+                      name="soDu" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[ngaySinh]"
+                      dataType="dbDate"
+                      name="ngaySinh" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[gioiTinh]"
+                      dataType="bool"
+                      name="gioiTinh" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[diaChiThuongTru]"
+                      dataType="wstr"
+                      length="50"
+                      name="diaChiThuongTru" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[diaChiLienLac]"
+                      dataType="wstr"
+                      length="50"
+                      name="diaChiLienLac" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[soCMND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="soCMND" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[dienThoai]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="dienThoai" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[tinhTrangHonNhan]"
+                      dataType="bool"
+                      name="tinhTrangHonNhan" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[ngayLap]"
+                      dataType="dbTimeStamp"
+                      name="ngayLap" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[tinhTrangHoatDong]"
+                      dataType="bool"
+                      name="tinhTrangHoatDong" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].ExternalColumns[maCNDangKy]"
+                      dataType="i4"
+                      name="maCNDangKy" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import KhachHang\Table KhachHang"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Table KhachHang"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[KhachHang]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import KhachHang\Table KhachHang.Connections[OleDbConnection]"
+                  connectionManagerID="{73AC0D61-4144-410C-987E-E09E82B9F8F5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.QL_NGAN_HANG]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[hoTen]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="hoTen"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[HoTen]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[hoTen]" />
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[ngaySinh]"
+                      cachedDataType="dbDate"
+                      cachedName="ngaySinh"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[NgaySinh]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[ngaySinh]" />
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[gioiTinh]"
+                      cachedDataType="bool"
+                      cachedName="gioiTinh"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[GioiTinh]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[gioiTinh]" />
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[diaChiThuongTru]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="diaChiThuongTru"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[DiaChiThuongTru]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[diaChiThuongTru]" />
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[diaChiLienLac]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="diaChiLienLac"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[DiaChiLienLac]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[diaChiLienLac]" />
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[soCMND]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="soCMND"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[SoCMND]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[soCMND]" />
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[dienThoai]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="dienThoai"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[DienThoai]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[dienThoai]" />
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[tinhTrangHonNhan]"
+                      cachedDataType="bool"
+                      cachedName="tinhTrangHonNhan"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[TinhTrangHonNhan]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[tinhTrangHonNhan]" />
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[ngayLap]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ngayLap"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[NgayLap]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[ngayLap]" />
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[tinhTrangHoatDong]"
+                      cachedDataType="bool"
+                      cachedName="tinhTrangHoatDong"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[TinhTrangHoatDong]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[tinhTrangHoatDong]" />
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[maCNDangKy]"
+                      cachedDataType="i4"
+                      cachedName="maCNDangKy"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[MaCNDangky]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[maCNDangKy]" />
+                    <inputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].Columns[soDu]"
+                      cachedDataType="decimal"
+                      cachedName="soDu"
+                      externalMetadataColumnId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[SoDuTaiKhoan]"
+                      lineageId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output].Columns[soDu]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[MaKhachHang]"
+                      dataType="i4"
+                      name="MaKhachHang" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[HoTen]"
+                      dataType="wstr"
+                      length="70"
+                      name="HoTen" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[SoDuTaiKhoan]"
+                      dataType="numeric"
+                      name="SoDuTaiKhoan"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[NgaySinh]"
+                      dataType="dbDate"
+                      name="NgaySinh" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[GioiTinh]"
+                      dataType="bool"
+                      name="GioiTinh" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[DiaChiThuongTru]"
+                      dataType="wstr"
+                      length="250"
+                      name="DiaChiThuongTru" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[DiaChiLienLac]"
+                      dataType="wstr"
+                      length="250"
+                      name="DiaChiLienLac" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[SoCMND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="SoCMND" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[DienThoai]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="DienThoai" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[TinhTrangHonNhan]"
+                      dataType="bool"
+                      name="TinhTrangHonNhan" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[NgayLap]"
+                      dataType="dbTimeStamp"
+                      name="NgayLap" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[TinhTrangHoatDong]"
+                      dataType="bool"
+                      name="TinhTrangHoatDong" />
+                    <externalMetadataColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input].ExternalColumns[MaCNDangky]"
+                      dataType="i4"
+                      name="MaCNDangky" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import KhachHang\Table KhachHang.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import KhachHang\Table KhachHang.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import KhachHang\Table KhachHang.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import KhachHang\Table KhachHang.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import KhachHang.Paths[Flat File Source Output]"
+              endId="Package\Import KhachHang\Table KhachHang.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Import KhachHang\File KhachHang.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -780,51 +1493,47 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task"
-          TopLeft="298,121" />
+          Size="168,42"
+          Id="Package\Import KhachHang"
+          TopLeft="67,36" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Import GiaoDich"
+          TopLeft="345,32" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\Import GiaoDichChuyenTien"
+          TopLeft="163,152" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\Import KhachHang">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="184,91" />
+          Size="152,42"
+          Id="Package\Import KhachHang\File KhachHang"
+          TopLeft="340,41" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="543,100" />
+          Size="161,42"
+          Id="Package\Import KhachHang\Table KhachHang"
+          TopLeft="339,168" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="335,112">
+          Id="Package\Import KhachHang.Paths[Flat File Source Output]"
+          TopLeft="417.75,83">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="208,9"
+              EndConnector="0,85"
               Start="0,0"
-              End="200.5,9">
+              End="0,77.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="100,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="100,0"
-                    Point2="104,0"
-                    Point3="104,4" />
-                  <mssgle:LineSegment
-                    End="104,5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="104,5"
-                    Point2="104,9"
-                    Point3="108,9" />
-                  <mssgle:LineSegment
-                    End="200.5,9" />
+                    End="0,77.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -837,7 +1546,109 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Import KhachHang\Table KhachHang">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Import GiaoDich">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Import GiaoDich\File GiaoDich"
+          TopLeft="401,47" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Import GiaoDich\Table GiaoDich"
+          TopLeft="393,168" />
+        <EdgeLayout
+          Id="Package\Import GiaoDich.Paths[Flat File Source Output]"
+          TopLeft="469.5,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import GiaoDich\Table GiaoDich">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Import GiaoDichChuyenTien">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Import GiaoDichChuyenTien\File GiaoDichChuyenTien"
+          TopLeft="263,46" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien"
+          TopLeft="256.5,214.5" />
+        <EdgeLayout
+          Id="Package\Import GiaoDichChuyenTien.Paths[Flat File Source Output]"
+          TopLeft="359.75,88">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,126.5"
+              Start="0,0"
+              End="0,119">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,119" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import GiaoDichChuyenTien\Table GiaoDichChuyenTien">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
